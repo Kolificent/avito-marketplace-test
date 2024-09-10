@@ -8,7 +8,7 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import GradeIcon from '@mui/icons-material/Grade';
 
-export const categories = [
+export const CATEGORIES = [
   {
     id: 1,
     name: 'Панель управления',
@@ -26,7 +26,7 @@ export const categories = [
   },
 ];
 
-export const tabs = [
+export const TABS = [
   {
     id: 1,
     name: 'Объявления',

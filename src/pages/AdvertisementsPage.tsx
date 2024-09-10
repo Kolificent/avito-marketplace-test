@@ -3,13 +3,13 @@ import Toolbar from '@mui/material/Toolbar';
 import AddIcon from '@mui/icons-material/Add';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
-import AdvertisementGrid from '../components/AdvertisementsPage/AdvertisementGrid/AdvertisementGrid';
+import AdvertisementsGrid from '../components/AdvertisementsPage/AdvertisementsGrid/AdvertisementsGrid';
 import CustomPagination from '../components/AdvertisementsPage/CustomPagination/CustomPagination';
 import { Box, Fab } from '@mui/material';
 import SelectSort from '../components/AdvertisementsPage/SelectSort';
+import AdsSearchField from '../components/AdvertisementsPage/AdsSearchField';
 
 export default function AdvertisementsPage() {
   return (
@@ -31,15 +31,7 @@ export default function AdvertisementsPage() {
                 <SearchIcon color="inherit" sx={{ display: 'block' }} />
               </Grid>
               <Grid item xs>
-                <TextField
-                  fullWidth
-                  placeholder="Найти объявление"
-                  InputProps={{
-                    disableUnderline: true,
-                    sx: { fontSize: 'default' },
-                  }}
-                  variant="standard"
-                />
+                <AdsSearchField />
               </Grid>
               <Grid item>
                 <SelectSort />
@@ -48,7 +40,7 @@ export default function AdvertisementsPage() {
           </Toolbar>
         </AppBar>
         <Box padding={2} gap={2} display="flex" flexDirection="column">
-          <AdvertisementGrid />
+          <AdvertisementsGrid />
           <CustomPagination />
         </Box>
       </Paper>

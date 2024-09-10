@@ -1,13 +1,5 @@
-import {
-  Box,
-  FormControl,
-  IconButton,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-} from '@mui/material';
-import { OrderStatusLabels } from '../../../constants/orderStatusTitles';
+import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
+import { ORDER_STATUS_LABELS } from '../../../constants/orderStatusTitles';
 
 const SELECT_LABEL = 'Статус';
 
@@ -17,7 +9,7 @@ function SelectStatus() {
       <FormControl fullWidth size="small">
         <InputLabel>{SELECT_LABEL}</InputLabel>
         <Select label={SELECT_LABEL}>
-          {Object.values(OrderStatusLabels).map((option) => (
+          {Object.values(ORDER_STATUS_LABELS).map((option) => (
             <MenuItem key={option} id={option} value={option}>
               {option}
             </MenuItem>

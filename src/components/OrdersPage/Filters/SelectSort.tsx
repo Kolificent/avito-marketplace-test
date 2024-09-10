@@ -1,13 +1,4 @@
-import {
-  Box,
-  FormControl,
-  IconButton,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-} from '@mui/material';
-import { OrderStatusLabels } from '../../../constants/orderStatusTitles';
+import { Box, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import { ORDER_SORT_OPTIONS } from '../../../constants/sortOptions';
 
 const SELECT_LABEL = 'Сортировать по';

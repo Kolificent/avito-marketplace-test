@@ -70,7 +70,7 @@ export default function AdvertisementCard({
         <CardMedia component="img" height="182" image={image} alt={title} />
         <CardContent sx={{ padding: 1 }}>
           <Typography variant="h6" color="primary">
-            {`₽${price.toFixed(0)}`}
+            {`₽${price}`}
           </Typography>
           <Typography
             variant="h6"

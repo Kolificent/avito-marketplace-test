@@ -1,0 +1,45 @@
+import { createSlice } from '@reduxjs/toolkit';
+import { DEFAULT_ADS_FILTER } from '../constants/sliceDefaults';
+
+const adsFiltersSlice = createSlice({
+  name: 'adsFilters',
+  initialState: DEFAULT_ADS_FILTER,
+  reducers: {
+    resetFilters: () => DEFAULT_ADS_FILTER,
+    changeSort: (state, action) => {
+      return {
+        ...state,
+        sort: action.payload,
+        currentPage: 1,
+      };
+    },
+    changeMaxPage: (state, action) => {
+      return {
+        ...state,
+        maxPage: Math.min(action.payload, DEFAULT_ADS_FILTER.maxPage),
+      };
+    },
+    changeCurrentPage: (state, action) => {
+      return {
+        ...state,
+        currentPage: action.payload,
+      };
+    },
+    changePageCount: (state, action) => {
+      return {
+        ...state,
+        pageCount: action.payload,
+      };
+    },
+  },
+});
+
+const { actions, reducer: adsFiltersReducer } = adsFiltersSlice;
+// export const {
+//   resetFilters,
+//   changeSort,
+//   changeMaxPage,
+//   changeCurrentPage,
+//   changePageCount,
+// } = actions;
+// export default adsFiltersReducer;

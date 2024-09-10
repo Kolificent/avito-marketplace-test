@@ -6,9 +6,10 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { categories } from '../../constants/categories';
-import { useNavigate } from 'react-router-dom';
+import { CATEGORIES } from '../../constants/navigation';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { getTabById } from '../../utils/getTabById';
+import AvitoLogo from '../../assets/avito.svg';
 
 const itemStyle = {
   py: '2px',
@@ -27,22 +28,21 @@ const itemCategoryStyle = {
 
 export default function Navigator(props: DrawerProps) {
   const navigate = useNavigate();
+  const location = useLocation();
   const { ...other } = props;
 
   return (
     <Drawer variant="permanent" {...other}>
+      <Box
+        padding={2}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <img src={AvitoLogo} width="70%" />
+      </Box>
       <List disablePadding>
-        <ListItem
-          sx={{
-            ...itemStyle,
-            ...itemCategoryStyle,
-            fontSize: 22,
-            color: '#fff',
-          }}
-        >
-          Авито
-        </ListItem>
-        {categories.map(({ id, name, children }) => (
+        {CATEGORIES.map(({ id, name, children }) => (
           <Box key={id} sx={{ bgcolor: '#101F33' }}>
             <ListItem sx={{ py: 2, px: 3 }}>
               <ListItemText sx={{ color: '#fff' }}>{name}</ListItemText>
@@ -50,10 +50,12 @@ export default function Navigator(props: DrawerProps) {
             {children.map((childId) => {
               const tab = getTabById(childId);
               if (!tab) return;
+
+              const isButtonSelected = location.pathname === `/${tab.route}`;
               return (
                 <ListItem disablePadding key={childId}>
                   <ListItemButton
-                    selected={true}
+                    selected={isButtonSelected}
                     sx={itemStyle}
                     onClick={() => {
                       navigate(tab.route);

@@ -1,5 +1,5 @@
-import { tabs } from '../constants/categories';
+import { TABS } from '../constants/navigation';
 
 export const getTabById = (id: number) => {
-  return tabs.find((page) => page.id === id);
+  return TABS.find((page) => page.id === id);
 };
