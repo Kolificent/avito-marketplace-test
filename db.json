@@ -396,6 +396,44 @@
       "views": 450,
       "likes": 50,
       "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-n/wc1000/7075484447.jpg"
+    },
+    {
+      "id": "41",
+      "name": "English Ad",
+      "description": "bebebebababa",
+      "price": 7000,
+      "createdAt": "2024-09-11T00:16:55.351Z",
+      "views": 450,
+      "likes": 50,
+      "imageUrl": "https://i.imgur.com/VFBnt3n.jpeg"
+    },
+    {
+      "id": "9ebe0388-6287-41bb-a44d-58e01073b84c",
+      "name": "Тестовое объявление",
+      "description": "бубубубабаба",
+      "price": "54634",
+      "views": 0,
+      "likes": 0,
+      "imageUrl": "https://i.imgur.com/q0QcaaL.png"
+    },
+    {
+      "id": "69fa5f21-e88a-477c-8192-208886368b72",
+      "name": "Тестовое объявление",
+      "description": "бубубубабаба",
+      "price": "54634",
+      "views": 0,
+      "likes": 0,
+      "imageUrl": "https://i.imgur.com/q0QcaaL.png"
+    },
+    {
+      "id": "cbe0f9ba-5707-4781-ba46-3b86d0f71121",
+      "name": "тестsdfgывап",
+      "description": "новый тест23233241234",
+      "price": "31231231231232323",
+      "views": 0,
+      "likes": 0,
+      "imageUrl": "https://i.imgur.com/gDAIoCp.jpeg",
+      "title": "тест3"
     }
   ],
   "orders": [
@@ -458,27 +496,6 @@
           "likes": 0,
           "imageUrl": "",
           "count": 5
-        }
-      ]
-    },
-    {
-      "id": "3",
-      "status": 0,
-      "createdAt": "2024-09-12T10:20:55.351Z",
-      "finishedAt": "",
-      "total": 35000,
-      "deliveryWay": "mail",
-      "items": [
-        {
-          "id": "33",
-          "name": "Смартфон",
-          "description": "Современный смартфон с отличной камерой и производительностью.",
-          "price": 35000,
-          "createdAt": "2024-09-04T07:16:55.351Z",
-          "views": 1200,
-          "likes": 150,
-          "imageUrl": "https://ir.ozone.ru/s3/multimedia-0/wc1000/6723376224.jpg",
-          "count": 1
         }
       ]
     },
@@ -584,6 +601,570 @@
           "views": 1000,
           "likes": 110,
           "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-z/wc1000/7116791783.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "status": 0,
+      "createdAt": "2024-09-16T10:20:55.351Z",
+      "finishedAt": "",
+      "total": 29000,
+      "deliveryWay": "mail",
+      "items": [
+        {
+          "id": "16",
+          "name": "Новый ноутбук",
+          "price": 60000,
+          "createdAt": "2024-08-18T03:16:55.351Z",
+          "views": 6000,
+          "likes": 600,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-c/wc1000/7099149036.jpg",
+          "count": 1
+        },
+        {
+          "id": "19",
+          "name": "Смарт-часы",
+          "description": "Новые, с множеством функций.",
+          "price": 5000,
+          "createdAt": "2024-08-21T00:16:55.351Z",
+          "views": 500,
+          "likes": 50,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-r/wc1000/7109894943.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "status": 1,
+      "createdAt": "2024-09-17T12:30:55.351Z",
+      "finishedAt": "2024-09-17T12:45:55.351Z",
+      "total": 17000,
+      "deliveryWay": "pickup",
+      "items": [
+        {
+          "id": "5",
+          "name": "Носки",
+          "price": 6000,
+          "createdAt": "2024-06-12T20:16:55.351Z",
+          "views": 0,
+          "likes": 0,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-h/wc1000/6606910241.jpg",
+          "count": 2
+        },
+        {
+          "id": "21",
+          "name": "Пылесос",
+          "description": "Мощный и компактный.",
+          "price": 7000,
+          "createdAt": "2024-08-23T19:16:55.351Z",
+          "views": 700,
+          "likes": 70,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-m/wc1000/7104940078.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "status": 2,
+      "createdAt": "2024-09-18T14:40:55.351Z",
+      "finishedAt": "2024-09-18T15:00:55.351Z",
+      "total": 21000,
+      "deliveryWay": "courier",
+      "items": [
+        {
+          "id": "13",
+          "name": "Деревянный стол",
+          "description": "Сделан вручную из дуба.",
+          "price": 12000,
+          "createdAt": "2024-08-16T06:16:55.351Z",
+          "views": 1200,
+          "likes": 120,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-0/wc1000/7038326412.jpg",
+          "count": 1
+        },
+        {
+          "id": "24",
+          "name": "Фонарь",
+          "description": "Ультраяркий, с множеством режимов.",
+          "price": 3000,
+          "createdAt": "2024-08-26T16:16:55.351Z",
+          "views": 300,
+          "likes": 30,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-z/wc1000/7107158771.jpg",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "status": 3,
+      "createdAt": "2024-09-19T16:50:55.351Z",
+      "finishedAt": "2024-09-19T17:00:55.351Z",
+      "total": 45000,
+      "deliveryWay": "sdek",
+      "items": [
+        {
+          "id": "10",
+          "name": "Золотой браслет",
+          "description": "Ювелирное изделие 18 карат.",
+          "price": 50000,
+          "createdAt": "2024-08-13T09:16:55.351Z",
+          "views": 500,
+          "likes": 50,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-o/wc1000/7106294004.jpg",
+          "count": 1
+        },
+        {
+          "id": "29",
+          "name": "Микроволновая печь",
+          "description": "В хорошем состоянии, быстро разогревает.",
+          "price": 6000,
+          "createdAt": "2024-08-31T11:16:55.351Z",
+          "views": 800,
+          "likes": 80,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-c/wc1000/6921028308.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "status": 0,
+      "createdAt": "2024-09-20T09:30:55.351Z",
+      "finishedAt": "",
+      "total": 27000,
+      "deliveryWay": "courier",
+      "items": [
+        {
+          "id": "27",
+          "name": "Тренажер",
+          "description": "Для домашнего использования, компактный.",
+          "price": 12000,
+          "createdAt": "2024-08-29T13:16:55.351Z",
+          "views": 400,
+          "likes": 40,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-3/wc1000/7052498319.jpg",
+          "count": 1
+        },
+        {
+          "id": "20",
+          "name": "Электрическая гитара",
+          "description": "С отличным звучанием и эффектами.",
+          "price": 25000,
+          "createdAt": "2024-08-22T20:16:55.351Z",
+          "views": 1000,
+          "likes": 100,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-r/wc1000/7004336931.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "status": 1,
+      "createdAt": "2024-09-21T11:45:55.351Z",
+      "finishedAt": "2024-09-21T12:00:55.351Z",
+      "total": 19000,
+      "deliveryWay": "pickup",
+      "items": [
+        {
+          "id": "18",
+          "name": "Швейная машинка",
+          "description": "Старинная, но в рабочем состоянии.",
+          "price": 10000,
+          "createdAt": "2024-08-20T01:16:55.351Z",
+          "views": 300,
+          "likes": 30,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-d/wc1000/6618256429.jpg",
+          "count": 1
+        },
+        {
+          "id": "24",
+          "name": "Фонарь",
+          "description": "Ультраяркий, с множеством режимов.",
+          "price": 3000,
+          "createdAt": "2024-08-26T16:16:55.351Z",
+          "views": 300,
+          "likes": 30,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-z/wc1000/7107158771.jpg",
+          "count": 3
+        },
+        {
+          "id": "12",
+          "name": "Картина маслом",
+          "description": "Авторская работа.",
+          "price": 30000,
+          "createdAt": "2024-08-15T07:16:55.351Z",
+          "views": 300,
+          "likes": 30,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-a/wc1000/7086945034.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "status": 2,
+      "createdAt": "2024-09-22T14:00:55.351Z",
+      "finishedAt": "2024-09-22T14:15:55.351Z",
+      "total": 23000,
+      "deliveryWay": "sdek",
+      "items": [
+        {
+          "id": "33",
+          "name": "Смартфон",
+          "description": "Современный смартфон с отличной камерой и производительностью.",
+          "price": 35000,
+          "createdAt": "2024-09-04T07:16:55.351Z",
+          "views": 1200,
+          "likes": 150,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-0/wc1000/6723376224.jpg",
+          "count": 1
+        },
+        {
+          "id": "1",
+          "name": "Стул старинный",
+          "description": "Очень красивый",
+          "price": 2000,
+          "createdAt": "2022-08-12T20:16:55.351Z",
+          "views": 20,
+          "likes": 2,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-o/wc1000/6810902052.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "status": 3,
+      "createdAt": "2024-09-23T16:50:55.351Z",
+      "finishedAt": "2024-09-23T17:00:55.351Z",
+      "total": 16000,
+      "deliveryWay": "mail",
+      "items": [
+        {
+          "id": "38",
+          "name": "Холодильник",
+          "description": "С новым компрессором, в отличном состоянии.",
+          "price": 25000,
+          "createdAt": "2024-09-09T02:16:55.351Z",
+          "views": 1000,
+          "likes": 110,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-z/wc1000/7116791783.jpg",
+          "count": 1
+        },
+        {
+          "id": "36",
+          "name": "Фитнес-браслет",
+          "description": "Отслеживайте свою активность и здоровье.",
+          "price": 3000,
+          "createdAt": "2024-09-07T04:16:55.351Z",
+          "views": 500,
+          "likes": 60,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-8/wc1000/6955572668.jpg",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "status": 0,
+      "createdAt": "2024-09-24T08:15:55.351Z",
+      "finishedAt": "",
+      "total": 44000,
+      "deliveryWay": "courier",
+      "items": [
+        {
+          "id": "4",
+          "name": "Ковер",
+          "description": "Стильный модный, как у бабушки в деревне :)))",
+          "price": 5000,
+          "createdAt": "2024-07-12T20:16:55.351Z",
+          "views": 2000000,
+          "likes": 2,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-u/wc1000/7051197954.jpg",
+          "count": 1
+        },
+        {
+          "id": "22",
+          "name": "Старинное зеркало",
+          "description": "Антиквариат, в отличном состоянии.",
+          "price": 12000,
+          "createdAt": "2024-08-24T18:16:55.351Z",
+          "views": 1200,
+          "likes": 120,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-g/wc1000/7093891420.jpg",
+          "count": 1
+        },
+        {
+          "id": "40",
+          "name": "Гриль",
+          "description": "Электрический гриль для приготовления мяса и овощей.",
+          "price": 7000,
+          "createdAt": "2024-09-11T00:16:55.351Z",
+          "views": 450,
+          "likes": 50,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-n/wc1000/7075484447.jpg",
+          "count": 1
+        },
+        {
+          "id": "14",
+          "name": "Кофеварка",
+          "description": "Автоматическая, с множеством функций.",
+          "price": 8000,
+          "createdAt": "2024-08-16T05:16:55.351Z",
+          "views": 800,
+          "likes": 80,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-z/wc1000/7112125295.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "status": 1,
+      "createdAt": "2024-09-25T10:30:55.351Z",
+      "finishedAt": "2024-09-25T10:45:55.351Z",
+      "total": 32000,
+      "deliveryWay": "sdek",
+      "items": [
+        {
+          "id": "12",
+          "name": "Картина маслом",
+          "description": "Авторская работа.",
+          "price": 30000,
+          "createdAt": "2024-08-15T07:16:55.351Z",
+          "views": 300,
+          "likes": 30,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-a/wc1000/7086945034.jpg",
+          "count": 1
+        },
+        {
+          "id": "39",
+          "name": "Кроссовки",
+          "description": "Новые, не подошли по размеру.",
+          "price": 4000,
+          "createdAt": "2024-09-10T01:16:55.351Z",
+          "views": 300,
+          "likes": 30,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-x/wc1000/7003596369.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "status": 2,
+      "createdAt": "2024-09-26T14:45:55.351Z",
+      "finishedAt": "2024-09-26T15:00:55.351Z",
+      "total": 21000,
+      "deliveryWay": "mail",
+      "items": [
+        {
+          "id": "30",
+          "name": "Детская коляска",
+          "description": "Удобная и легкая, почти новая.",
+          "price": 9000,
+          "createdAt": "2024-09-01T10:16:55.351Z",
+          "views": 500,
+          "likes": 50,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-v/wc1000/6965180707.jpg",
+          "count": 1
+        },
+        {
+          "id": "7",
+          "name": "Угловой диван",
+          "description": "Стих для привлечения внимания: дама сдавала в багаж диван...",
+          "price": 999,
+          "createdAt": "2024-08-12T14:16:55.351Z",
+          "views": 20000,
+          "likes": 1,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-e/wc1000/7050611930.jpg",
+          "count": 1
+        },
+        {
+          "id": "36",
+          "name": "Фитнес-браслет",
+          "description": "Отслеживайте свою активность и здоровье.",
+          "price": 3000,
+          "createdAt": "2024-09-07T04:16:55.351Z",
+          "views": 500,
+          "likes": 60,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-8/wc1000/6955572668.jpg",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "status": 3,
+      "createdAt": "2024-09-27T16:30:55.351Z",
+      "finishedAt": "2024-09-27T16:45:55.351Z",
+      "total": 58000,
+      "deliveryWay": "pickup",
+      "items": [
+        {
+          "id": "8",
+          "name": "Новый айфон",
+          "price": 100000,
+          "createdAt": "2024-08-12T12:16:55.351Z",
+          "views": 200000,
+          "likes": 302,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-d/wc1000/6025763881.jpg",
+          "count": 1
+        },
+        {
+          "id": "32",
+          "name": "Аквариум",
+          "description": "Объем 100 литров, с фильтром.",
+          "price": 15000,
+          "createdAt": "2024-09-03T08:16:55.351Z",
+          "views": 400,
+          "likes": 40,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-g/wc1000/6681619384.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "status": 0,
+      "createdAt": "2024-09-28T09:00:55.351Z",
+      "finishedAt": "",
+      "total": 36000,
+      "deliveryWay": "courier",
+      "items": [
+        {
+          "id": "1",
+          "name": "Стул старинный",
+          "description": "Очень красивый",
+          "price": 2000,
+          "createdAt": "2022-08-12T20:16:55.351Z",
+          "views": 20,
+          "likes": 2,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-o/wc1000/6810902052.jpg",
+          "count": 2
+        },
+        {
+          "id": "37",
+          "name": "Садовая мебель",
+          "description": "Комплект из стульев и стола для вашего сада.",
+          "price": 12000,
+          "createdAt": "2024-09-08T03:16:55.351Z",
+          "views": 800,
+          "likes": 90,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-z/wc1000/6857103563.jpg",
+          "count": 1
+        },
+        {
+          "id": "29",
+          "name": "Микроволновая печь",
+          "description": "В хорошем состоянии, быстро разогревает.",
+          "price": 6000,
+          "createdAt": "2024-08-31T11:16:55.351Z",
+          "views": 800,
+          "likes": 80,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-c/wc1000/6921028308.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "status": 1,
+      "createdAt": "2024-09-29T11:30:55.351Z",
+      "finishedAt": "2024-09-29T11:45:55.351Z",
+      "total": 42000,
+      "deliveryWay": "sdek",
+      "items": [
+        {
+          "id": "10",
+          "name": "Золотой браслет",
+          "description": "Ювелирное изделие 18 карат.",
+          "price": 50000,
+          "createdAt": "2024-08-13T09:16:55.351Z",
+          "views": 500,
+          "likes": 50,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-o/wc1000/7106294004.jpg",
+          "count": 1
+        },
+        {
+          "id": "33",
+          "name": "Смартфон",
+          "description": "Современный смартфон с отличной камерой и производительностью.",
+          "price": 35000,
+          "createdAt": "2024-09-04T07:16:55.351Z",
+          "views": 1200,
+          "likes": 150,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-0/wc1000/6723376224.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "status": 2,
+      "createdAt": "2024-09-30T14:00:55.351Z",
+      "finishedAt": "2024-09-30T14:15:55.351Z",
+      "total": 48000,
+      "deliveryWay": "mail",
+      "items": [
+        {
+          "id": "12",
+          "name": "Картина маслом",
+          "description": "Авторская работа.",
+          "price": 30000,
+          "createdAt": "2024-08-15T07:16:55.351Z",
+          "views": 300,
+          "likes": 30,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-a/wc1000/7086945034.jpg",
+          "count": 1
+        },
+        {
+          "id": "16",
+          "name": "Новый ноутбук",
+          "description": "Мощный процессор и видеокарта.",
+          "price": 60000,
+          "createdAt": "2024-08-18T03:16:55.351Z",
+          "views": 6000,
+          "likes": 600,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-c/wc1000/7099149036.jpg",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "status": 3,
+      "createdAt": "2024-10-01T16:50:55.351Z",
+      "finishedAt": "2024-10-01T17:00:55.351Z",
+      "total": 21000,
+      "deliveryWay": "pickup",
+      "items": [
+        {
+          "id": "20",
+          "name": "Электрическая гитара",
+          "description": "С отличным звучанием и эффектами.",
+          "price": 25000,
+          "createdAt": "2024-08-22T20:16:55.351Z",
+          "views": 1000,
+          "likes": 100,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-r/wc1000/7004336931.jpg",
+          "count": 1
+        },
+        {
+          "id": "19",
+          "name": "Смарт-часы",
+          "description": "Новые, с множеством функций.",
+          "price": 5000,
+          "createdAt": "2024-08-21T00:16:55.351Z",
+          "views": 500,
+          "likes": 50,
+          "imageUrl": "https://ir.ozone.ru/s3/multimedia-1-r/wc1000/7109894943.jpg",
           "count": 1
         }
       ]

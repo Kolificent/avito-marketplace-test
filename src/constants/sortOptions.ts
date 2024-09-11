@@ -1,6 +1,6 @@
 export const ORDER_SORT_OPTIONS = [
-  { id: 0, name: 'price', label: 'стоимости' },
-  { id: 1, name: 'date', label: 'дате' },
+  { id: 0, name: 'total', label: 'стоимости' },
+  { id: 1, name: 'createdAt', label: 'дате' },
 ];
 
 export const ADVERTISEMENT_SORT_OPTIONS = [

@@ -1,25 +1,23 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../store/store';
 import {
-  DEFAULT_ADS_FILTER,
+  DEFAULT_PAGINATION,
   DEFAULT_ADVERTISEMENTS,
 } from '../constants/sliceDefaults';
 import AdvertisementsAPI from '../api/advertisements';
-import { getSortNameById } from '../utils/getSortById';
+import { getAdsSortById } from '../utils/getSortById';
 
 export const updateAdvertisements = createAsyncThunk(
   'advertisements/updateAdvertisements',
   async (data, { getState }) => {
     const state = getState() as RootState;
-    const currentPage = state.advertisementsReducer.filters.currentPage;
-    const pageCount = state.advertisementsReducer.filters.pageCount;
-    const sortId = state.advertisementsReducer.filters.sort;
+    const currentPage = state.advertisementsReducer.pagination.currentPage;
+    const pageCount = state.advertisementsReducer.pagination.pageCount;
+    const sortId = state.advertisementsReducer.sort;
     const query = state.advertisementsReducer.query;
 
-    const sortValue = getSortNameById(sortId);
+    const sortValue = getAdsSortById(sortId);
     if (!sortValue) return;
-    console.log(sortValue);
-    console.log(query);
 
     const advertisementsData = await AdvertisementsAPI.getAdvertisements(
       currentPage,
@@ -28,7 +26,12 @@ export const updateAdvertisements = createAsyncThunk(
       query,
     );
 
-    return advertisementsData;
+    if (!advertisementsData) return;
+
+    return {
+      ads: advertisementsData.data,
+      count: advertisementsData.headers['x-total-count'],
+    };
   },
 );
 
@@ -37,57 +40,58 @@ const advertisementsSlice = createSlice({
   initialState: DEFAULT_ADVERTISEMENTS,
   reducers: {
     resetFilters: (state) => {
-      return { ...state, filters: DEFAULT_ADS_FILTER };
+      return { ...state, filters: DEFAULT_PAGINATION };
     },
-    changeSort: (state, action) => {
+    changeAdsSort: (state, action) => {
       return {
         ...state,
-        filters: { ...state.filters, sort: action.payload, currentPage: 1 },
+        sort: action.payload,
+        pagination: { ...state.pagination, currentPage: 1 },
       };
     },
-    // changeMaxPage: (state, action) => {
-    //   return {
-    //     ...state,
-    //     filters: {
-    //       ...state.filters,
-    //       maxPage: Math.min(action.payload, DEFAULT_ADS_FILTER.maxPage),
-    //     },
-    //   };
-    // },
-    changeCurrentPage: (state, action) => {
+    changeAdsCurrentPage: (state, action) => {
       return {
         ...state,
-        filters: {
-          ...state.filters,
+        pagination: {
+          ...state.pagination,
           currentPage: action.payload,
         },
       };
     },
-    changePageCount: (state, action) => {
+    changeAdsPageCount: (state, action) => {
       return {
         ...state,
-        filters: {
-          ...state.filters,
+        pagination: {
+          ...state.pagination,
           pageCount: action.payload,
+          currentPage: 1,
         },
       };
     },
-    changeQuery: (state, action) => {
+    changeAdsQuery: (state, action) => {
       return {
         ...state,
         query: action.payload,
+        pagination: {
+          ...state.pagination,
+          currentPage: 1,
+        },
       };
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(updateAdvertisements.fulfilled, (state, action) => {
+        if (!action.payload) return;
+
         return {
           ...state,
-          advertisements: action.payload.data,
-          filters: {
-            ...state.filters,
-            maxPage: Math.min(action.payload.last, DEFAULT_ADS_FILTER.maxPage),
+          advertisements: action.payload.ads,
+          pagination: {
+            ...state.pagination,
+            maxPage: Math.ceil(
+              Number(action.payload.count / state.pagination.pageCount),
+            ),
           },
           isLoading: false,
           error: null,
@@ -108,9 +112,9 @@ const advertisementsSlice = createSlice({
 const { actions, reducer: advertisementsReducer } = advertisementsSlice;
 export const {
   resetFilters,
-  changeSort,
-  changeCurrentPage,
-  changeQuery,
-  changePageCount,
+  changeAdsSort,
+  changeAdsCurrentPage,
+  changeAdsQuery,
+  changeAdsPageCount,
 } = actions;
 export default advertisementsReducer;

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { Order } from './types';
+import { OrdersInfo, ItemsPagination } from '../constants/sliceDefaults';
 
 const apiClient = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
@@ -9,11 +10,20 @@ const apiClient = axios.create({
 });
 
 const OrdersAPI = {
-  getAllOrders: async () => {
+  getOrders: async (
+    page: ItemsPagination['currentPage'],
+    count: ItemsPagination['pageCount'],
+    sort: string,
+    status: OrdersInfo['statusFilter'],
+    query: OrdersInfo['query'],
+  ) => {
     try {
-      const response = await apiClient.get('/orders');
+      const response = await apiClient.get(
+        `/orders?${query ? `items.id=${query}` : ''}${status === 7 ? '' : `status=${status}&`}_sort=${sort}&_order=desc&_page=${page}&_limit=${count}`,
+      );
+      console.log(response);
 
-      return response.data;
+      return response;
     } catch (error) {
       console.error('Error fetching orders', error);
       // throw error;

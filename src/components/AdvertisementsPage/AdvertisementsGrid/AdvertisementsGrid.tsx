@@ -3,10 +3,10 @@ import Grid from '@mui/material/Grid2';
 import AdvertisementCard from './AdvertisementCard/AdvertisementCard';
 import { useAppDispatch, useAppSelector } from '../../../store/store';
 import {
-  selectCurrentPage,
+  selectAdsCurrentPage,
   selectAdvertisements,
-  selectPageCount,
-  selectSort,
+  selectAdsPageCount,
+  selectAdsSort,
   selectQuery,
 } from '../../../selectors/advertisementsSelector';
 import { updateAdvertisements } from '../../../slices/advertisements';
@@ -14,9 +14,9 @@ import { updateAdvertisements } from '../../../slices/advertisements';
 export default function AdvertisementsGrid() {
   const dispatch = useAppDispatch();
   const advertisements = useAppSelector(selectAdvertisements);
-  const currentPage = useAppSelector(selectCurrentPage);
-  const sort = useAppSelector(selectSort);
-  const pageCount = useAppSelector(selectPageCount);
+  const currentPage = useAppSelector(selectAdsCurrentPage);
+  const sort = useAppSelector(selectAdsSort);
+  const pageCount = useAppSelector(selectAdsPageCount);
   const query = useAppSelector(selectQuery);
 
   useEffect(() => {
@@ -29,8 +29,9 @@ export default function AdvertisementsGrid() {
         return (
           <Grid key={ad.id}>
             <AdvertisementCard
+              id={ad.id}
               title={ad.name}
-              image={ad.imageUrl ? ad.imageUrl : ''}
+              image={ad.imageUrl}
               price={ad.price}
               views={ad.views}
               likes={ad.likes}

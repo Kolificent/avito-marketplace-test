@@ -43,8 +43,6 @@ export default function MainHeader(props: HeaderProps) {
                     color: 'common.white',
                   },
                 }}
-                rel="noopener noreferrer"
-                target="_blank"
               >
                 На главную
               </Link>

@@ -57,6 +57,7 @@ export default function Navigator(props: DrawerProps) {
                   <ListItemButton
                     selected={isButtonSelected}
                     sx={itemStyle}
+                    disabled={childId > 2}
                     onClick={() => {
                       navigate(tab.route);
                     }}

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { Advertisment } from './types';
+import { v4 as uuidv4 } from 'uuid';
 
 const apiClient = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
@@ -17,11 +18,11 @@ const AdvertisementsAPI = {
   ) => {
     try {
       const response = await apiClient.get(
-        `/advertisements?_sort=-${sort}&_page=${page}&_per_page=${count}${query ? `&name=${query}` : ''}`,
+        `/advertisements?_sort=${sort}&_order=desc&_page=${page}&_limit=${count}${query ? `&name_like=${query}` : ''}`,
       );
       console.log(response);
 
-      return response.data;
+      return response;
     } catch (error) {
       console.error('Error fetching advertisements', error);
       // throw error;
@@ -43,9 +44,22 @@ const AdvertisementsAPI = {
     }
   },
 
-  createAdvertisement: async () => {
+  createAdvertisement: async (name, price, imageUrl, description?) => {
     try {
-      const response = await apiClient.post(`/advertisements`);
+      const date = new Date();
+      const response = await apiClient.post(
+        `/advertisements`,
+        JSON.stringify({
+          id: uuidv4(),
+          name: name,
+          description: description ? description : '',
+          price: price,
+          createdAt: date.toDateString,
+          views: 0,
+          likes: 0,
+          imageUrl: imageUrl,
+        }),
+      );
       return response.data;
     } catch (error) {
       console.error(`Error creating advertisement`, error);

@@ -7,18 +7,17 @@ import {
   SelectChangeEvent,
 } from '@mui/material';
 import { ADVERTISEMENT_SORT_OPTIONS } from '../../constants/sortOptions';
-import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/store';
-import { selectSort } from '../../selectors/advertisementsSelector';
-import { changeSort } from '../../slices/advertisements';
+import { selectAdsSort } from '../../selectors/advertisementsSelector';
+import { changeAdsSort } from '../../slices/advertisements';
 
 const SELECT_LABEL = 'Сортировать по';
 function SelectSort() {
   const dispatch = useAppDispatch();
-  const sort = useAppSelector(selectSort);
+  const sort = useAppSelector(selectAdsSort);
 
   const handleChange = (event: SelectChangeEvent) => {
-    dispatch(changeSort(event.target.value));
+    dispatch(changeAdsSort(event.target.value));
   };
 
   return (

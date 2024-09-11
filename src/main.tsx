@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         element: <Navigate to="/advertisements" replace />,
       },
       { path: 'advertisements', element: <AdvertisementsPage /> },
-      { path: 'advertisement', element: <AdvertisementPage /> },
+      { path: 'advertisement/:id', element: <AdvertisementPage /> },
       { path: 'orders', element: <OrdersPage /> },
     ],
     // errorElement: <ErrorPage />,
