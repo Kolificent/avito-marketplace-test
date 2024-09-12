@@ -1,9 +1,9 @@
 import { TextField } from '@mui/material';
-import { selectQuery } from '../../selectors/advertisementsSelector';
-import { useAppDispatch, useAppSelector } from '../../store/store';
+import { selectQuery } from '@selectors/advertisementsSelector';
+import { useAppDispatch, useAppSelector } from '@store';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
-import { changeAdsQuery } from '../../slices/advertisements';
+import { changeAdsQuery } from '@slices/advertisements';
 
 export default function AdsSearchField() {
   const initialQuery = useAppSelector(selectQuery);

@@ -1,16 +1,19 @@
 import Grid from '@mui/material/Grid2';
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../store/store';
+import { useAppDispatch, useAppSelector } from '@store';
 import {
   selectOrders,
   selectOrdersCurrentPage,
+  selectOrdersError,
+  selectOrdersLoading,
   selectOrdersPageCount,
   selectOrdersQuery,
   selectOrdersSort,
   selectStatusFilter,
-} from '../../../selectors/ordersSelector';
-import { updateOrders } from '../../../slices/orders';
+} from '@selectors/ordersSelector';
+import { updateOrders } from '@slices/orders';
 import OrderCard from './OrderCard';
+import { Box, CircularProgress } from '@mui/material';
 
 export default function OrdersList() {
   const dispatch = useAppDispatch();
@@ -20,12 +23,30 @@ export default function OrdersList() {
   const pageCount = useAppSelector(selectOrdersPageCount);
   const statusFilter = useAppSelector(selectStatusFilter);
   const query = useAppSelector(selectOrdersQuery);
+  const isLoading = useAppSelector(selectOrdersLoading);
+  const error = useAppSelector(selectOrdersError);
 
   useEffect(() => {
     dispatch(updateOrders());
   }, [currentPage, sort, pageCount, statusFilter, query, dispatch]);
 
-  if (!orders) return null;
+  if (isLoading || error) {
+    return (
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        height={1}
+        width={1}
+        padding={8}
+        gap={3}
+        flexDirection="column"
+      >
+        <CircularProgress />
+        {error}
+      </Box>
+    );
+  }
   return (
     <Grid container spacing={2}>
       {orders.map((order) => (

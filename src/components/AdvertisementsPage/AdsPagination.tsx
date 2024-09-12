@@ -1,15 +1,15 @@
 import { SelectChangeEvent } from '@mui/material';
-import { useAppDispatch, useAppSelector } from '../../store/store';
+import { useAppDispatch, useAppSelector } from '@store';
 import {
   selectAdsCurrentPage,
   selectAdsMaxPage,
   selectAdsPageCount,
-} from '../../selectors/advertisementsSelector';
+} from '@selectors/advertisementsSelector';
 import { ChangeEvent } from 'react';
 import {
   changeAdsCurrentPage,
   changeAdsPageCount,
-} from '../../slices/advertisements';
+} from '@slices/advertisements';
 import CustomPagination from '../ui/CustomPagination/CustomPagination';
 
 function AdsPagination() {

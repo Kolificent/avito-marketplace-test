@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Advertisment } from './types';
+import type { Advertisment } from '@types';
 import { v4 as uuidv4 } from 'uuid';
 
 const apiClient = axios.create({
@@ -20,12 +20,9 @@ const AdvertisementsAPI = {
       const response = await apiClient.get(
         `/advertisements?_sort=${sort}&_order=desc&_page=${page}&_limit=${count}${query ? `&name_like=${query}` : ''}`,
       );
-      console.log(response);
-
       return response;
     } catch (error) {
       console.error('Error fetching advertisements', error);
-      // throw error;
     }
   },
 
@@ -40,11 +37,15 @@ const AdvertisementsAPI = {
         `Error fetching advertisement with id ${advertisementId}`,
         error,
       );
-      // throw error;
     }
   },
 
-  createAdvertisement: async (name, price, imageUrl, description?) => {
+  createAdvertisement: async (
+    name: Advertisment['name'],
+    price: Advertisment['price'],
+    imageUrl?: Advertisment['imageUrl'],
+    description?: Advertisment['description'],
+  ) => {
     try {
       const date = new Date();
       const response = await apiClient.post(
@@ -57,13 +58,12 @@ const AdvertisementsAPI = {
           createdAt: date.toDateString,
           views: 0,
           likes: 0,
-          imageUrl: imageUrl,
+          imageUrl: imageUrl ? imageUrl : '',
         }),
       );
       return response.data;
     } catch (error) {
       console.error(`Error creating advertisement`, error);
-      // throw error;
     }
   },
 
@@ -79,7 +79,6 @@ const AdvertisementsAPI = {
         `Error updating advertisement with id ${advertisementData.id}`,
         error,
       );
-      // throw error;
     }
   },
 
@@ -91,7 +90,6 @@ const AdvertisementsAPI = {
         `Error deleting advertisement with id ${advertisementId}`,
         error,
       );
-      // throw error;
     }
   },
 };

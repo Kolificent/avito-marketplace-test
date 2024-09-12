@@ -1,5 +1,17 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@*": ["src/*"],
+      "@ui/*": ["src/components/ui/*"],
+      "@store": ["src/redux/store"],
+      "@utils": ["src/utils"],
+      "@slices/*": ["src/redux/slices/*"],
+      "@constants/*": ["src/constants/*"],
+      "@api/*": ["src/api/*"],
+      "@assets/*": ["src/assets/*"],
+      "@selectors/*": ["src/redux/selectors/*"]
+    },
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],

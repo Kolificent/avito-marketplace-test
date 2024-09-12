@@ -1,13 +1,13 @@
-import { Box, Button, Paper } from '@mui/material';
+import { Box, Button, CircularProgress, Paper } from '@mui/material';
 import { Fragment, useEffect, useState } from 'react';
 import AdDetails from '../components/AdvertisementPage/AdDetails';
 import { useParams } from 'react-router-dom';
-import AdvertisementsAPI from '../api/advertisements';
-import { Advertisment } from '../api/types';
+import AdvertisementsAPI from '../api/advertisementsApi';
+import { Advertisment } from '../types';
 import EditIcon from '@mui/icons-material/Edit';
-import { useAppDispatch, useAppSelector } from '../store/store';
-import { selectEditAdDialog } from '../selectors/dialogSelectors';
-import { openEditAdDialog } from '../slices/editAdDialog';
+import { useAppDispatch, useAppSelector } from '../redux/store';
+import { selectEditAdDialog } from '../redux/selectors/dialogSelectors';
+import { openEditAdDialog } from '../redux/slices/editAdDialog';
 import EditAdDialog from '../components/AdvertisementPage/EditAdDialog';
 
 export default function AdvertisementPage() {
@@ -27,51 +27,64 @@ export default function AdvertisementPage() {
     dispatch(openEditAdDialog());
   }
 
-  if (!advertisement) return null;
+  if (!advertisement)
+    return (
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        height={1}
+        width={1}
+      >
+        <CircularProgress />
+      </Box>
+    );
 
   return (
     <Fragment>
       <EditAdDialog advertisement={advertisement} />
-      <Paper
-        sx={{
-          margin: 'auto',
-          overflow: 'hidden',
-          display: 'flex',
-          gap: 2,
-          padding: 2,
-        }}
-      >
-        <Box display="flex" gap={4}>
-          <Box
-            sx={{
-              width: '500px',
-              height: '500px',
-              objectFit: 'cover',
-            }}
-            overflow="hidden"
-            component="img"
-            src={advertisement.imageUrl}
-            alt={advertisement.name}
-            borderRadius={2}
-          />
-          <Box display="flex" flexDirection="column" gap={4}>
-            <AdDetails
-              title={advertisement.name}
-              likes={advertisement.likes}
-              views={advertisement.views}
-              price={advertisement.price}
-              description={advertisement.description}
+      <Box>
+        <Paper
+          sx={{
+            margin: 'auto',
+            overflow: 'hidden',
+            display: 'flex',
+            gap: 2,
+            padding: 2,
+          }}
+        >
+          <Box display="flex" gap={4} flexWrap="wrap">
+            <Box
+              sx={{
+                objectFit: 'cover',
+                aspectRatio: 1,
+                width: '400px',
+                height: '400px',
+              }}
+              component="img"
+              src={advertisement.imageUrl}
+              alt={advertisement.name}
+              borderRadius={2}
             />
-            <Button
-              variant="outlined"
-              startIcon={<EditIcon />}
-              onClick={handleClick}
-            >
-              Изменить объявление
-            </Button>
+            <Box display="flex" flexDirection="column" gap={4}>
+              <AdDetails
+                title={advertisement.name}
+                likes={advertisement.likes}
+                views={advertisement.views}
+                price={advertisement.price}
+                description={advertisement.description}
+              />
+              <Button
+                variant="outlined"
+                startIcon={<EditIcon />}
+                onClick={handleClick}
+              >
+                Изменить объявление
+              </Button>
+            </Box>
           </Box>
-        </Box>
-      </Paper>
+        </Paper>
+      </Box>
     </Fragment>
   );
 }

@@ -1,4 +1,4 @@
-// тут по условию в названии грамматическая ошибка, но менять контракты нельзя...
+// По условию в названии грамматическая ошибка, но менять контракты нельзя...
 type Advertisment = {
   /* Уникальный идентификатор. */
   id: string;
@@ -58,3 +58,49 @@ type Image = {
 
 export type { Advertisment, OrderItem, Order, Image };
 export { OrderStatus };
+
+// Далее идут контракты, что не были даны по условию
+
+interface SortOptions {
+  id: number;
+  name: string;
+  label: string;
+}
+
+interface AdvertisementsInfo {
+  advertisements: Array<Advertisment>;
+  pagination: ItemsPagination;
+  // ! допилилить типизацию сортировки
+  sort: number;
+  query: Advertisment['name'];
+  isLoading: boolean;
+  error: string | null;
+}
+
+interface OrdersInfo {
+  orders: Array<Order>;
+  pagination: ItemsPagination;
+  query: Advertisment['id'];
+  statusFilter: Order['status'] | 7;
+  sort: number;
+  isLoading: boolean;
+  error: string | null;
+}
+
+interface ItemsPagination {
+  currentPage: number;
+  maxPage: number;
+  pageCount: number;
+}
+
+interface DialogStatus {
+  isOpen: boolean;
+}
+
+export type {
+  ItemsPagination,
+  AdvertisementsInfo,
+  OrdersInfo,
+  DialogStatus,
+  SortOptions,
+};

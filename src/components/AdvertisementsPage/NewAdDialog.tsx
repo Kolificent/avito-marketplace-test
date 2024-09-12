@@ -7,12 +7,12 @@ import {
   DialogTitle,
   TextField,
 } from '@mui/material';
-import { useAppDispatch, useAppSelector } from '../../store/store';
-import { selectNewAdDialog } from '../../selectors/dialogSelectors';
-import { closeNewAdDialog } from '../../slices/newAdDialog';
-import AdvertisementsAPI from '../../api/advertisements';
+import { useAppDispatch, useAppSelector } from '@store';
+import { selectNewAdDialog } from '@selectors/dialogSelectors';
+import { closeNewAdDialog } from '@slices/newAdDialog';
+import AdvertisementsAPI from '@api/advertisementsApi';
 import { ChangeEvent, useState } from 'react';
-import { updateAdvertisements } from '../../slices/advertisements';
+import { updateAdvertisements } from '@slices/advertisements';
 
 export default function NewAdDialog() {
   const dispatch = useAppDispatch();

@@ -7,7 +7,7 @@ import {
   Select,
   SelectChangeEvent,
 } from '@mui/material';
-import { ItemsPagination } from '../../../constants/sliceDefaults';
+import { ItemsPagination } from '@constants/slicesDefaults';
 import { ChangeEvent } from 'react';
 
 interface CustomPaginationProps {

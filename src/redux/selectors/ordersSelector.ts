@@ -1,9 +1,13 @@
-import { Order } from '../api/types';
-import { OrdersInfo, ItemsPagination } from '../constants/sliceDefaults';
-import { RootState } from '../store/store';
+import { Order } from '../../types';
+import { OrdersInfo, ItemsPagination } from '../../constants/slicesDefaults';
+import { RootState } from '../store';
 
 const selectOrders = (state: RootState): Array<Order> =>
   state.ordersReducer.orders;
+const selectOrdersLoading = (state: RootState): OrdersInfo['isLoading'] =>
+  state.ordersReducer.isLoading;
+const selectOrdersError = (state: RootState): OrdersInfo['error'] =>
+  state.ordersReducer.error;
 const selectOrdersCurrentPage = (
   state: RootState,
 ): ItemsPagination['currentPage'] => state.ordersReducer.pagination.currentPage;
@@ -21,6 +25,8 @@ const selectOrdersQuery = (state: RootState): OrdersInfo['query'] =>
 
 export {
   selectOrders,
+  selectOrdersLoading,
+  selectOrdersError,
   selectOrdersCurrentPage,
   selectOrdersMaxPage,
   selectOrdersPageCount,

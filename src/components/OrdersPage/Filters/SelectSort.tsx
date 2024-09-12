@@ -6,10 +6,10 @@ import {
   Select,
   SelectChangeEvent,
 } from '@mui/material';
-import { ORDER_SORT_OPTIONS } from '../../../constants/sortOptions';
-import { useAppDispatch, useAppSelector } from '../../../store/store';
-import { selectOrdersSort } from '../../../selectors/ordersSelector';
-import { changeOrdersSort } from '../../../slices/orders';
+import { ORDER_SORT_OPTIONS } from '@constants/sortOptions';
+import { useAppDispatch, useAppSelector } from '@store';
+import { selectOrdersSort } from '@selectors/ordersSelector';
+import { changeOrdersSort } from '@slices/orders';
 
 const SELECT_LABEL = 'Сортировать по';
 

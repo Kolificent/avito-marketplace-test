@@ -1,17 +1,14 @@
 import { SelectChangeEvent } from '@mui/material';
-import { useAppDispatch, useAppSelector } from '../../store/store';
+import { useAppDispatch, useAppSelector } from '@store';
 import { ChangeEvent } from 'react';
 
-import CustomPagination from '../ui/CustomPagination/CustomPagination';
+import CustomPagination from '@ui/CustomPagination/CustomPagination';
 import {
   selectOrdersCurrentPage,
   selectOrdersMaxPage,
   selectOrdersPageCount,
-} from '../../selectors/ordersSelector';
-import {
-  changeOrdersCurrentPage,
-  changeOrdersPageCount,
-} from '../../slices/orders';
+} from '@selectors/ordersSelector';
+import { changeOrdersCurrentPage, changeOrdersPageCount } from '@slices/orders';
 
 function OrdersPagination() {
   const dispatch = useAppDispatch();

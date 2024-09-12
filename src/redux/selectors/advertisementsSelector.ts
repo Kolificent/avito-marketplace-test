@@ -1,12 +1,16 @@
-import { Advertisment } from '../api/types';
+import { Advertisment } from '../../types';
 import {
   AdvertisementsInfo,
   ItemsPagination,
-} from '../constants/sliceDefaults';
-import { RootState } from '../store/store';
+} from '../../constants/slicesDefaults';
+import { RootState } from '../store';
 
 const selectAdvertisements = (state: RootState): Array<Advertisment> =>
   state.advertisementsReducer.advertisements;
+const selectAdsLoading = (state: RootState): AdvertisementsInfo['isLoading'] =>
+  state.advertisementsReducer.isLoading;
+const selectAdsError = (state: RootState): AdvertisementsInfo['error'] =>
+  state.advertisementsReducer.error;
 const selectAdsCurrentPage = (
   state: RootState,
 ): ItemsPagination['currentPage'] =>
@@ -22,6 +26,8 @@ const selectQuery = (state: RootState): Advertisment['name'] =>
 
 export {
   selectAdvertisements,
+  selectAdsLoading,
+  selectAdsError,
   selectAdsCurrentPage,
   selectAdsMaxPage,
   selectAdsPageCount,

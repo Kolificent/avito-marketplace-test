@@ -5,15 +5,18 @@ import {
   Typography,
   CardActionArea,
   Box,
+  Skeleton,
+  CircularProgress,
 } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import { Link } from 'react-router-dom';
-import { Advertisment } from '../../../../api/types';
+import { Advertisment } from '@types';
+import { useState } from 'react';
 
 interface AdvertisementCardProps {
   id: Advertisment['id'];
-  title: Advertisment['name'];
+  name: Advertisment['name'];
   image: Advertisment['imageUrl'];
   price: Advertisment['price'];
   views: Advertisment['views'];
@@ -22,12 +25,17 @@ interface AdvertisementCardProps {
 
 export default function AdvertisementCard({
   id,
-  title,
+  name,
   image,
   price,
   views,
   likes,
 }: AdvertisementCardProps) {
+  const [loading, setLoading] = useState(true);
+
+  const handleImageLoad = () => {
+    setLoading(false);
+  };
   return (
     <Card sx={{ width: 182 }}>
       <Link
@@ -75,7 +83,26 @@ export default function AdvertisementCard({
               {likes}
             </Typography>
           </Box>
-          <CardMedia component="img" height="182" image={image} alt={title} />
+          {loading && (
+            <CardMedia
+              sx={{
+                height: '182px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <CircularProgress />
+            </CardMedia>
+          )}
+          <CardMedia
+            component="img"
+            height="182"
+            image={image}
+            alt={name}
+            style={{ display: loading ? 'none' : 'block' }}
+            onLoad={handleImageLoad}
+          />
           <CardContent sx={{ padding: 1 }}>
             <Typography variant="h6" color="primary">
               {`₽${price}`}
@@ -90,7 +117,7 @@ export default function AdvertisementCard({
                 WebkitLineClamp: 2, // Указываем количество строк
               }}
             >
-              {title}
+              {name}
             </Typography>
           </CardContent>
         </CardActionArea>

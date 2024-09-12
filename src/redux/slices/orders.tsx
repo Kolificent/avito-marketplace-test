@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../store/store';
-import { DEFAULT_ORDERS } from '../constants/sliceDefaults';
-import OrdersAPI from '../api/orders';
-import { getOrdersSortById } from '../utils/getSortById';
+import { RootState } from '../store';
+import { DEFAULT_ORDERS } from '../../constants/slicesDefaults';
+import OrdersAPI from '../../api/ordersApi';
+import { getOrdersSortById } from '@utils/getSortById';
 
 export const updateOrders = createAsyncThunk(
   'orders/updateOrders',

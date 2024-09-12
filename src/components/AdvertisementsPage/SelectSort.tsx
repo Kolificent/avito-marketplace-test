@@ -6,10 +6,10 @@ import {
   Select,
   SelectChangeEvent,
 } from '@mui/material';
-import { ADVERTISEMENT_SORT_OPTIONS } from '../../constants/sortOptions';
-import { useAppDispatch, useAppSelector } from '../../store/store';
-import { selectAdsSort } from '../../selectors/advertisementsSelector';
-import { changeAdsSort } from '../../slices/advertisements';
+import { ADVERTISEMENT_SORT_OPTIONS } from '@constants/sortOptions';
+import { useAppDispatch, useAppSelector } from '@store';
+import { selectAdsSort } from '@selectors/advertisementsSelector';
+import { changeAdsSort } from '@slices/advertisements';
 
 const SELECT_LABEL = 'Сортировать по';
 function SelectSort() {

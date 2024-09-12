@@ -6,10 +6,10 @@ import {
   Select,
   SelectChangeEvent,
 } from '@mui/material';
-import { STATUS_FILTER_LABELS } from '../../../constants/orderStatusTitles';
-import { useAppDispatch, useAppSelector } from '../../../store/store';
-import { selectStatusFilter } from '../../../selectors/ordersSelector';
-import { changeStatusFilter } from '../../../slices/orders';
+import { STATUS_FILTER_LABELS } from '@constants/statusFilterLabels';
+import { useAppDispatch, useAppSelector } from '@store';
+import { selectStatusFilter } from '@selectors/ordersSelector';
+import { changeStatusFilter } from '@slices/orders';
 
 const SELECT_LABEL = 'Статус';
 

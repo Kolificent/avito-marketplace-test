@@ -1,7 +1,8 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import { Advertisment } from '../../api/types';
+import { Advertisment } from '@types';
+import { useState } from 'react';
 
 export interface AdDetailsProps {
   title: Advertisment['name'];
@@ -18,6 +19,12 @@ export default function AdDetails({
   price,
   description,
 }: AdDetailsProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleToggleDescription = () => {
+    setIsExpanded((prev) => !prev);
+  };
+
   return (
     <Box display="flex" flexDirection="column" gap={2}>
       <Typography variant="h5" component="h1">
@@ -37,10 +44,25 @@ export default function AdDetails({
           </Typography>
         </Box>
       </Box>
-      <Typography variant="h2" color="primary">
-        {`₽${price}`}
+      <Typography variant="h2" fontSize="2em" color="primary">
+        <strong>{`₽${price}`}</strong>
       </Typography>
-      <Typography>{description}</Typography>
+      {description && (
+        <Typography>
+          {isExpanded || description.length <= 100
+            ? description
+            : `${description.slice(0, 100)}...`}
+          {description.length > 100 && (
+            <Button
+              size="small"
+              variant="contained"
+              onClick={handleToggleDescription}
+            >
+              {isExpanded ? 'Скрыть' : 'Ещё'}
+            </Button>
+          )}
+        </Typography>
+      )}
     </Box>
   );
 }

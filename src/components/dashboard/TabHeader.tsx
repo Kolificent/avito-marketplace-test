@@ -1,23 +1,11 @@
-import {
-  AppBar,
-  Button,
-  Grid,
-  IconButton,
-  Tab,
-  Tabs,
-  Toolbar,
-  Tooltip,
-  Typography,
-} from '@mui/material';
-import React, { Fragment } from 'react';
-import HelpIcon from '@mui/icons-material/Help';
+import { AppBar, Toolbar, Typography } from '@mui/material';
 import { useLocation } from 'react-router-dom';
-import { TABS } from '../../constants/navigation';
+import { TABS } from '@constants/navigation';
 
 export default function TabHeader() {
   const location = useLocation();
-  const tab = TABS.find((tab) => `/${tab.route}` === location.pathname);
-  if (!tab) return null;
+  const tabInfo = TABS.find((tab) => `/${tab.route}` === location.pathname);
+  if (!tabInfo) return null;
   return (
     <AppBar
       component="div"
@@ -28,7 +16,7 @@ export default function TabHeader() {
     >
       <Toolbar>
         <Typography color="inherit" variant="h5" component="h1">
-          {tab.name}
+          {tabInfo.name}
         </Typography>
       </Toolbar>
     </AppBar>

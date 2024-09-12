@@ -8,13 +8,13 @@ import {
 } from '@mui/material';
 import { useState } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Order } from '../../../api/types';
-import { formatDate } from '../../../utils/formatDate';
-import { getStatusLabel } from '../../../utils/getStatusById';
+import { Order } from '@types';
+import { formatDate } from '@utils';
+import { getStatusLabelById } from '@utils';
 import AdvertisementCard from '../../AdvertisementsPage/AdvertisementsGrid/AdvertisementCard/AdvertisementCard';
-import OrdersAPI from '../../../api/orders';
-import { useAppDispatch } from '../../../store/store';
-import { updateOrders } from '../../../slices/orders';
+import OrdersAPI from '@api/ordersApi';
+import { useAppDispatch } from '@store';
+import { updateOrders } from '@slices/orders';
 
 interface OrderCardProps {
   id: Order['id'];
@@ -51,7 +51,7 @@ export default function OrderCard(order: OrderCardProps) {
             </Box>
             <Typography variant="caption">Номер: {order.id}</Typography>
             <Typography variant="body2">
-              {getStatusLabel(order.status)}
+              {getStatusLabelById(order.status)}
             </Typography>
           </Box>
           <Box display="flex" alignItems="flex-end" flexDirection="column">
@@ -72,7 +72,7 @@ export default function OrderCard(order: OrderCardProps) {
                   <Grid2 key={ad.id}>
                     <AdvertisementCard
                       id={ad.id}
-                      title={ad.name}
+                      name={ad.name}
                       image={ad.imageUrl}
                       price={ad.price}
                       views={ad.views}

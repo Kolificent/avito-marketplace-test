@@ -7,12 +7,12 @@ import {
   DialogTitle,
   TextField,
 } from '@mui/material';
-import { useAppDispatch, useAppSelector } from '../../store/store';
-import { selectEditAdDialog } from '../../selectors/dialogSelectors';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { selectEditAdDialog } from '@selectors/dialogSelectors';
 import { ChangeEvent, useState } from 'react';
-import { closeEditAdDialog } from '../../slices/editAdDialog';
-import AdvertisementsAPI from '../../api/advertisements';
-import { Advertisment } from '../../api/types';
+import { closeEditAdDialog } from '@slices/editAdDialog';
+import AdvertisementsAPI from '../../api/advertisementsApi';
+import { Advertisment } from '@types';
 
 interface EditAdDialogProps {
   advertisement: Advertisment;

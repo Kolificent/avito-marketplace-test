@@ -1,6 +1,5 @@
 import axios from 'axios';
-import { Order } from './types';
-import { OrdersInfo, ItemsPagination } from '../constants/sliceDefaults';
+import type { ItemsPagination, Order, OrdersInfo } from '@types';
 
 const apiClient = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
@@ -13,7 +12,7 @@ const OrdersAPI = {
   getOrders: async (
     page: ItemsPagination['currentPage'],
     count: ItemsPagination['pageCount'],
-    sort: string,
+    sort: OrdersInfo['sort'],
     status: OrdersInfo['statusFilter'],
     query: OrdersInfo['query'],
   ) => {
@@ -21,12 +20,9 @@ const OrdersAPI = {
       const response = await apiClient.get(
         `/orders?${query ? `items.id=${query}` : ''}${status === 7 ? '' : `status=${status}&`}_sort=${sort}&_order=desc&_page=${page}&_limit=${count}`,
       );
-      console.log(response);
-
       return response;
     } catch (error) {
       console.error('Error fetching orders', error);
-      // throw error;
     }
   },
 
@@ -36,7 +32,6 @@ const OrdersAPI = {
       return response.data;
     } catch (error) {
       console.error(`Error fetching order with id ${orderId}`, error);
-      // throw error;
     }
   },
 
@@ -49,7 +44,6 @@ const OrdersAPI = {
       return response.data;
     } catch (error) {
       console.error(`Error updating order with id ${orderData.id}`, error);
-      // throw error;
     }
   },
 
@@ -58,7 +52,6 @@ const OrdersAPI = {
       await apiClient.delete(`/orders/${orderId}`);
     } catch (error) {
       console.error(`Error deleting order with id ${orderId}`, error);
-      // throw error;
     }
   },
 };

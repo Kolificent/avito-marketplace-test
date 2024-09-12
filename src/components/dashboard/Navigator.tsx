@@ -6,10 +6,10 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { CATEGORIES } from '../../constants/navigation';
+import { CATEGORIES } from '@constants/navigation';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { getTabById } from '../../utils/getTabById';
-import AvitoLogo from '../../assets/avito.svg';
+import { getTabById } from '@utils';
+import AvitoLogo from '@assets/avito.svg';
 
 const itemStyle = {
   py: '2px',

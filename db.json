@@ -405,7 +405,7 @@
       "createdAt": "2024-09-11T00:16:55.351Z",
       "views": 450,
       "likes": 50,
-      "imageUrl": "https://i.imgur.com/VFBnt3n.jpeg"
+      "imageUrl": "https://sun9-61.userapi.com/impg/I9rTY30gutDwMAhQYJpJ_6vsrBIUJAKaERIpCQ/oOXLxgyOhHI.jpg?size=588x454&quality=96&sign=b536d53f928f3793742e6b64dd064287&type=album"
     },
     {
       "id": "9ebe0388-6287-41bb-a44d-58e01073b84c",
@@ -414,60 +414,10 @@
       "price": "54634",
       "views": 0,
       "likes": 0,
-      "imageUrl": "https://i.imgur.com/q0QcaaL.png"
-    },
-    {
-      "id": "69fa5f21-e88a-477c-8192-208886368b72",
-      "name": "Тестовое объявление",
-      "description": "бубубубабаба",
-      "price": "54634",
-      "views": 0,
-      "likes": 0,
-      "imageUrl": "https://i.imgur.com/q0QcaaL.png"
-    },
-    {
-      "id": "cbe0f9ba-5707-4781-ba46-3b86d0f71121",
-      "name": "тестsdfgывап",
-      "description": "новый тест23233241234",
-      "price": "31231231231232323",
-      "views": 0,
-      "likes": 0,
-      "imageUrl": "https://i.imgur.com/gDAIoCp.jpeg",
-      "title": "тест3"
+      "imageUrl": "https://sun9-46.userapi.com/impg/fLGS8p-Px4qRt589FZHzaG6GroxAw3vaxpJMAg/IWT7LyZjEHY.jpg?size=750x563&quality=95&sign=caba200e4048483313064ea664802200&type=album"
     }
   ],
   "orders": [
-    {
-      "id": "1",
-      "status": 0,
-      "createdAt": "2024-08-12T20:20:55.351Z",
-      "finishedAt": "",
-      "total": 314000,
-      "deliveryWay": "mail",
-      "items": [
-        {
-          "id": "8",
-          "name": "Новый айфон",
-          "price": 100000,
-          "createdAt": "2024-08-12T12:16:55.351Z",
-          "views": 200000,
-          "likes": 302,
-          "imageUrl": "",
-          "count": 3
-        },
-        {
-          "id": "6",
-          "name": "Картонная коробка",
-          "description": "Почная.",
-          "price": 7000,
-          "createdAt": "2024-04-12T20:16:55.351Z",
-          "views": 1,
-          "likes": 0,
-          "imageUrl": "",
-          "count": 2
-        }
-      ]
-    },
     {
       "id": "2",
       "status": 4,

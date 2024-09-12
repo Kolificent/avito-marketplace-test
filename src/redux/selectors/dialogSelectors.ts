@@ -1,5 +1,5 @@
-import { DialogStatus } from '../constants/sliceDefaults';
-import { RootState } from '../store/store';
+import { DialogStatus } from '../../constants/slicesDefaults';
+import { RootState } from '../store';
 
 const selectNewAdDialog = (state: RootState): DialogStatus =>
   state.newAdDialogReducer;

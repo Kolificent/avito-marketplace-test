@@ -1,5 +1,5 @@
 {
-  "name": "kli-template",
+  "name": "avito-marketplace-test",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -21,7 +21,6 @@
     "@mui/material": "^6.0.2",
     "@reduxjs/toolkit": "^2.2.7",
     "axios": "^1.7.7",
-    "eslint-config-prettier": "^9.1.0",
     "json-server": "^0.17.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -32,10 +31,13 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@types/node": "^22.5.4",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@types/uuid": "^10.0.0",
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react-func": "^0.1.18",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",

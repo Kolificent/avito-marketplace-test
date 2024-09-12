@@ -4,7 +4,7 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import SearchIcon from '@mui/icons-material/Search';
 import AdvertisementsGrid from '../components/AdvertisementsPage/AdvertisementsGrid/AdvertisementsGrid';
-import AdsPagination from '../components/AdvertisementsPage/AdsPagination';
+import AdsPagination from '@/components/AdvertisementsPage/AdsPagination';
 import { Box } from '@mui/material';
 import SelectSort from '../components/AdvertisementsPage/SelectSort';
 import AdsSearchField from '../components/AdvertisementsPage/AdsSearchField';
