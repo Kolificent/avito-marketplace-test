@@ -57,9 +57,10 @@ React, TypeScript, React Router, Redux (RTK), axios, Material UI, Vite, ESLint
 2. В json-server нету возможности искать айтемы в массиве по значению свойства. Из-за этого не реализован поиск заказа по id объявления.
 3. Присутствует адаптивная вёрстка (но не самая красивая хд)
 4. В данном по условию файле была грамматическая ошибка в названии типа, но также по ТЗ менять контракты нельзя.
+5. Реализованы лоадеры, ховеры, раскрывашки и прочие фантастические твари
 
 ## Ссылки на репозиторий
 
 [Github](https://github.com/Kolificent/avito-marketplace-test)
 
-[Gitverse](https://github.com/Kolificent/avito-marketplace-test)
+[Gitverse](https://gitverse.ru/kolificent/avito-marketplace-test)

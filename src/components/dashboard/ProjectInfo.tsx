@@ -12,7 +12,7 @@ export default function ProjectInfo() {
       </Link>{' '}
       <Link
         color="inherit"
-        href="https://github.com/Kolificent/avito-marketplace-test"
+        href="https://gitverse.ru/kolificent/avito-marketplace-test"
       >
         {'GitVerse'}
       </Link>
