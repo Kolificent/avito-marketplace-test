@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { DEFAULT_DIALOG } from '../../constants/slicesDefaults';
+import { DEFAULT_DIALOG } from '@constants/slicesDefaults';
 
 const newAdDialogSlice = createSlice({
   name: 'newAdDialog',

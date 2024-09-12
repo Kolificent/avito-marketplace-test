@@ -7,7 +7,6 @@ import {
   selectOrdersError,
   selectOrdersLoading,
   selectOrdersPageCount,
-  selectOrdersQuery,
   selectOrdersSort,
   selectStatusFilter,
 } from '@selectors/ordersSelector';
@@ -22,13 +21,12 @@ export default function OrdersList() {
   const sort = useAppSelector(selectOrdersSort);
   const pageCount = useAppSelector(selectOrdersPageCount);
   const statusFilter = useAppSelector(selectStatusFilter);
-  const query = useAppSelector(selectOrdersQuery);
   const isLoading = useAppSelector(selectOrdersLoading);
   const error = useAppSelector(selectOrdersError);
 
   useEffect(() => {
     dispatch(updateOrders());
-  }, [currentPage, sort, pageCount, statusFilter, query, dispatch]);
+  }, [currentPage, sort, pageCount, statusFilter, dispatch]);
 
   if (isLoading || error) {
     return (

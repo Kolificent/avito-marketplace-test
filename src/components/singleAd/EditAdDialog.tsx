@@ -8,44 +8,42 @@ import {
   TextField,
 } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@store';
-import { selectNewAdDialog } from '@selectors/dialogSelectors';
-import { closeNewAdDialog } from '@slices/newAdDialog';
-import AdvertisementsAPI from '@api/advertisementsApi';
+import { selectEditAdDialog } from '@selectors/dialogSelectors';
 import { ChangeEvent, useState } from 'react';
-import { updateAdvertisements } from '@slices/advertisements';
+import { closeEditAdDialog } from '@slices/editAdDialog';
+import AdvertisementsAPI from '@api/advertisementsApi';
+import type { Advertisment } from '@types';
 
-export default function NewAdDialog() {
+interface EditAdDialogProps {
+  advertisement: Advertisment;
+}
+
+export default function EditAdDialog({ advertisement }: EditAdDialogProps) {
   const dispatch = useAppDispatch();
-  const dialogStatus = useAppSelector(selectNewAdDialog);
+  const dialogStatus = useAppSelector(selectEditAdDialog);
 
   const [adDetails, setAdDetails] = useState({
-    title: '',
-    price: '',
-    description: '',
-    imageUrl: '',
+    name: advertisement.name,
+    price: advertisement.price,
+    description: advertisement.description,
+    imageUrl: advertisement.imageUrl,
   });
 
   function handleClose() {
-    dispatch(closeNewAdDialog());
+    dispatch(closeEditAdDialog());
     setAdDetails({
-      title: '',
-      price: '',
-      description: '',
-      imageUrl: '',
+      name: advertisement.name,
+      price: advertisement.price,
+      description: advertisement.description,
+      imageUrl: advertisement.imageUrl,
     });
   }
 
   function handleSubmit() {
-    const { title, price, description, imageUrl } = adDetails;
-    AdvertisementsAPI.createAdvertisement(title, price, imageUrl, description);
-    dispatch(closeNewAdDialog());
-    dispatch(updateAdvertisements());
-    setAdDetails({
-      title: '',
-      price: '',
-      description: '',
-      imageUrl: '',
-    });
+    AdvertisementsAPI.updateAdvertisement({ ...advertisement, ...adDetails });
+    dispatch(closeEditAdDialog());
+    // не лучший подход
+    window.location.reload();
   }
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {

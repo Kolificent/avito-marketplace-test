@@ -1,4 +1,4 @@
-import {
+import type {
   AdvertisementsInfo,
   DialogStatus,
   ItemsPagination,
@@ -22,7 +22,6 @@ const DEFAULT_ADVERTISEMENTS: AdvertisementsInfo = {
 
 const DEFAULT_ORDERS: OrdersInfo = {
   orders: [],
-  query: '',
   pagination: DEFAULT_PAGINATION,
   sort: 0,
   statusFilter: 7,

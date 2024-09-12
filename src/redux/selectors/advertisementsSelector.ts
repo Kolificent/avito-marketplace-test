@@ -1,9 +1,5 @@
-import { Advertisment } from '../../types';
-import {
-  AdvertisementsInfo,
-  ItemsPagination,
-} from '../../constants/slicesDefaults';
-import { RootState } from '../store';
+import type { AdvertisementsInfo, ItemsPagination, Advertisment } from '@types';
+import { RootState } from '@store';
 
 const selectAdvertisements = (state: RootState): Array<Advertisment> =>
   state.advertisementsReducer.advertisements;

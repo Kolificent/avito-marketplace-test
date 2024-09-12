@@ -5,13 +5,12 @@ import {
   Typography,
   CardActionArea,
   Box,
-  Skeleton,
   CircularProgress,
 } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import { Link } from 'react-router-dom';
-import { Advertisment } from '@types';
+import type { Advertisment } from '@types';
 import { useState } from 'react';
 
 interface AdvertisementCardProps {

@@ -1,6 +1,5 @@
-import { Order } from '../../types';
-import { OrdersInfo, ItemsPagination } from '../../constants/slicesDefaults';
-import { RootState } from '../store';
+import type { Order, OrdersInfo, ItemsPagination } from '@types';
+import { RootState } from '@store';
 
 const selectOrders = (state: RootState): Array<Order> =>
   state.ordersReducer.orders;
@@ -20,8 +19,6 @@ const selectOrdersSort = (state: RootState): OrdersInfo['sort'] =>
   state.ordersReducer.sort;
 const selectStatusFilter = (state: RootState): OrdersInfo['statusFilter'] =>
   state.ordersReducer.statusFilter;
-const selectOrdersQuery = (state: RootState): OrdersInfo['query'] =>
-  state.ordersReducer.query;
 
 export {
   selectOrders,
@@ -32,5 +29,4 @@ export {
   selectOrdersPageCount,
   selectOrdersSort,
   selectStatusFilter,
-  selectOrdersQuery,
 };

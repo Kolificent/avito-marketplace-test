@@ -14,7 +14,7 @@ import {
 import { Provider } from 'react-redux';
 import AdvertisementsPage from './pages/AdvertisementsPage.tsx';
 import OrdersPage from './pages/OrdersPage.tsx';
-import AdvertisementPage from './pages/AdvertisementPage.tsx';
+import AdvertisementPage from './pages/SingleAdPage.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 
 const router = createBrowserRouter([

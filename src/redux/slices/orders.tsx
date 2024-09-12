@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../store';
-import { DEFAULT_ORDERS } from '../../constants/slicesDefaults';
-import OrdersAPI from '../../api/ordersApi';
+import { RootState } from '@store';
+import { DEFAULT_ORDERS } from '@constants/slicesDefaults';
+import OrdersAPI from '@api/ordersApi';
 import { getOrdersSortById } from '@utils/getSortById';
 
 export const updateOrders = createAsyncThunk(
@@ -12,7 +12,6 @@ export const updateOrders = createAsyncThunk(
     const pageCount = state.ordersReducer.pagination.pageCount;
     const sortId = state.ordersReducer.sort;
     const status = state.ordersReducer.statusFilter;
-    const query = state.ordersReducer.query;
 
     const sortValue = getOrdersSortById(sortId);
     if (!sortValue) return;
@@ -22,7 +21,6 @@ export const updateOrders = createAsyncThunk(
       pageCount,
       sortValue,
       status,
-      query,
     );
 
     if (!ordersData) return;

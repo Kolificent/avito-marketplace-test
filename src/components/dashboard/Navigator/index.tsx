@@ -20,12 +20,6 @@ const itemStyle = {
   },
 };
 
-const itemCategoryStyle = {
-  boxShadow: '0 -1px 0 rgb(255,255,255,0.1) inset',
-  py: 1.5,
-  px: 3,
-};
-
 export default function Navigator(props: DrawerProps) {
   const navigate = useNavigate();
   const location = useLocation();

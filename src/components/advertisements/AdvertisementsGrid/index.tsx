@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Grid from '@mui/material/Grid2';
-import AdvertisementCard from './AdvertisementCard/AdvertisementCard';
+import AdvertisementCard from './AdvertisementCard';
 import { useAppDispatch, useAppSelector } from '@store';
 import {
   selectAdsCurrentPage,

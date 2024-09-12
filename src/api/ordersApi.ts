@@ -1,24 +1,17 @@
-import axios from 'axios';
-import type { ItemsPagination, Order, OrdersInfo } from '@types';
-
-const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+import { buildOrdersRequestParams } from '@utils';
+import apiClient from './axios';
+import type { ItemsPagination, Order, OrdersInfo, SortOptions } from '@types';
 
 const OrdersAPI = {
   getOrders: async (
     page: ItemsPagination['currentPage'],
     count: ItemsPagination['pageCount'],
-    sort: OrdersInfo['sort'],
+    sort: SortOptions['name'],
     status: OrdersInfo['statusFilter'],
-    query: OrdersInfo['query'],
   ) => {
     try {
       const response = await apiClient.get(
-        `/orders?${query ? `items.id=${query}` : ''}${status === 7 ? '' : `status=${status}&`}_sort=${sort}&_order=desc&_page=${page}&_limit=${count}`,
+        buildOrdersRequestParams(page, count, sort, status),
       );
       return response;
     } catch (error) {

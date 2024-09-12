@@ -1,10 +1,10 @@
 import { Box, Button, Typography } from '@mui/material';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import { Advertisment } from '@types';
+import type { Advertisment } from '@types';
 import { useState } from 'react';
 
-export interface AdDetailsProps {
+interface AdDetailsProps {
   title: Advertisment['name'];
   likes: Advertisment['likes'];
   views: Advertisment['views'];

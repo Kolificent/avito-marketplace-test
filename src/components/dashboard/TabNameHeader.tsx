@@ -2,7 +2,7 @@ import { AppBar, Toolbar, Typography } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import { TABS } from '@constants/navigation';
 
-export default function TabHeader() {
+export default function TabNameHeader() {
   const location = useLocation();
   const tabInfo = TABS.find((tab) => `/${tab.route}` === location.pathname);
   if (!tabInfo) return null;

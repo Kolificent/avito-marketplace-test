@@ -3,14 +3,14 @@ import Toolbar from '@mui/material/Toolbar';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import SearchIcon from '@mui/icons-material/Search';
-import AdvertisementsGrid from '../components/AdvertisementsPage/AdvertisementsGrid/AdvertisementsGrid';
-import AdsPagination from '@/components/AdvertisementsPage/AdsPagination';
+import AdvertisementsGrid from '@/components/advertisements/AdvertisementsGrid';
 import { Box } from '@mui/material';
-import SelectSort from '../components/AdvertisementsPage/SelectSort';
-import AdsSearchField from '../components/AdvertisementsPage/AdsSearchField';
-import NewAdButton from '../components/AdvertisementsPage/NewAdButton';
+import SelectAdsSort from '@/components/advertisements/SelectAdsSort';
+import AdsSearchField from '@/components/advertisements/AdsSearchField';
+import NewAdButton from '@/components/advertisements/NewAdButton';
 import { Fragment } from 'react/jsx-runtime';
-import NewAdDialog from '../components/AdvertisementsPage/NewAdDialog';
+import NewAdDialog from '@/components/advertisements/NewAdDialog';
+import AdsPagination from '@/components/advertisements/AdsPagination';
 
 export default function AdvertisementsPage() {
   return (
@@ -37,7 +37,7 @@ export default function AdvertisementsPage() {
                   <AdsSearchField />
                 </Grid>
                 <Grid item>
-                  <SelectSort />
+                  <SelectAdsSort />
                 </Grid>
                 <Grid item>
                   <NewAdButton />

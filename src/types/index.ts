@@ -70,8 +70,7 @@ interface SortOptions {
 interface AdvertisementsInfo {
   advertisements: Array<Advertisment>;
   pagination: ItemsPagination;
-  // ! допилилить типизацию сортировки
-  sort: number;
+  sort: SortOptions['id'];
   query: Advertisment['name'];
   isLoading: boolean;
   error: string | null;
@@ -80,9 +79,8 @@ interface AdvertisementsInfo {
 interface OrdersInfo {
   orders: Array<Order>;
   pagination: ItemsPagination;
-  query: Advertisment['id'];
   statusFilter: Order['status'] | 7;
-  sort: number;
+  sort: SortOptions['id'];
   isLoading: boolean;
   error: string | null;
 }

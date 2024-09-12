@@ -1,13 +1,7 @@
-import axios from 'axios';
+import apiClient from './axios';
 import type { Advertisment } from '@types';
+import { buildAdsRequestParams } from '@utils';
 import { v4 as uuidv4 } from 'uuid';
-
-const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
 
 const AdvertisementsAPI = {
   getAdvertisements: async (
@@ -18,7 +12,7 @@ const AdvertisementsAPI = {
   ) => {
     try {
       const response = await apiClient.get(
-        `/advertisements?_sort=${sort}&_order=desc&_page=${page}&_limit=${count}${query ? `&name_like=${query}` : ''}`,
+        buildAdsRequestParams(page, count, sort, query),
       );
       return response;
     } catch (error) {
@@ -53,12 +47,12 @@ const AdvertisementsAPI = {
         JSON.stringify({
           id: uuidv4(),
           name: name,
-          description: description ? description : '',
+          description: description || '',
           price: price,
-          createdAt: date.toDateString,
+          createdAt: date.toDateString(),
           views: 0,
           likes: 0,
-          imageUrl: imageUrl ? imageUrl : '',
+          imageUrl: imageUrl || '',
         }),
       );
       return response.data;
@@ -85,6 +79,7 @@ const AdvertisementsAPI = {
   deleteAdvertisement: async (advertisementId: Advertisment['id']) => {
     try {
       await apiClient.delete(`/advertisements/${advertisementId}`);
+      return;
     } catch (error) {
       console.error(
         `Error deleting advertisement with id ${advertisementId}`,

@@ -1,4 +1,4 @@
-import { SortOptions } from '../types';
+import type { SortOptions } from '@types';
 
 export const ORDER_SORT_OPTIONS: Array<SortOptions> = [
   { id: 0, name: 'total', label: 'стоимости' },

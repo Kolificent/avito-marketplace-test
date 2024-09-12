@@ -2,7 +2,7 @@ import { SelectChangeEvent } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@store';
 import { ChangeEvent } from 'react';
 
-import CustomPagination from '@ui/CustomPagination/CustomPagination';
+import CustomPagination from '@ui/CustomPagination';
 import {
   selectOrdersCurrentPage,
   selectOrdersMaxPage,

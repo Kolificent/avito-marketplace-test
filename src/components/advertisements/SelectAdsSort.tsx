@@ -6,19 +6,18 @@ import {
   Select,
   SelectChangeEvent,
 } from '@mui/material';
-import { ORDER_SORT_OPTIONS } from '@constants/sortOptions';
+import { ADVERTISEMENT_SORT_OPTIONS } from '@constants/sortOptions';
 import { useAppDispatch, useAppSelector } from '@store';
-import { selectOrdersSort } from '@selectors/ordersSelector';
-import { changeOrdersSort } from '@slices/orders';
+import { selectAdsSort } from '@selectors/advertisementsSelector';
+import { changeAdsSort } from '@slices/advertisements';
 
 const SELECT_LABEL = 'Сортировать по';
-
-function SelectSort() {
+function SelectAdsSort() {
   const dispatch = useAppDispatch();
-  const sort = useAppSelector(selectOrdersSort);
+  const sort = useAppSelector(selectAdsSort);
 
-  const handleChange = (e: SelectChangeEvent) => {
-    dispatch(changeOrdersSort(e.target.value));
+  const handleChange = (event: SelectChangeEvent) => {
+    dispatch(changeAdsSort(event.target.value));
   };
 
   return (
@@ -30,7 +29,7 @@ function SelectSort() {
           value={sort.toString()}
           onChange={handleChange}
         >
-          {ORDER_SORT_OPTIONS.map((option) => (
+          {ADVERTISEMENT_SORT_OPTIONS.map((option) => (
             <MenuItem key={option.id} value={option.id}>
               {option.label}
             </MenuItem>
@@ -41,4 +40,4 @@ function SelectSort() {
   );
 }
 
-export default SelectSort;
+export default SelectAdsSort;

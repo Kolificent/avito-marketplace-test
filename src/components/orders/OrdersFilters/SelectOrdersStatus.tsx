@@ -6,18 +6,19 @@ import {
   Select,
   SelectChangeEvent,
 } from '@mui/material';
-import { ADVERTISEMENT_SORT_OPTIONS } from '@constants/sortOptions';
+import { STATUS_FILTER_LABELS } from '@constants/statusFilterLabels';
 import { useAppDispatch, useAppSelector } from '@store';
-import { selectAdsSort } from '@selectors/advertisementsSelector';
-import { changeAdsSort } from '@slices/advertisements';
+import { selectStatusFilter } from '@selectors/ordersSelector';
+import { changeStatusFilter } from '@slices/orders';
 
-const SELECT_LABEL = 'Сортировать по';
-function SelectSort() {
+const SELECT_LABEL = 'Статус';
+
+function SelectOrdersStatus() {
   const dispatch = useAppDispatch();
-  const sort = useAppSelector(selectAdsSort);
+  const statusFilter = useAppSelector(selectStatusFilter);
 
-  const handleChange = (event: SelectChangeEvent) => {
-    dispatch(changeAdsSort(event.target.value));
+  const handleChange = (e: SelectChangeEvent) => {
+    dispatch(changeStatusFilter(e.target.value));
   };
 
   return (
@@ -26,10 +27,11 @@ function SelectSort() {
         <InputLabel>{SELECT_LABEL}</InputLabel>
         <Select
           label={SELECT_LABEL}
-          value={sort.toString()}
+          value={statusFilter.toString()}
           onChange={handleChange}
         >
-          {ADVERTISEMENT_SORT_OPTIONS.map((option) => (
+          <MenuItem value={7}>Не выбран</MenuItem>
+          {STATUS_FILTER_LABELS.slice(0, -1).map((option) => (
             <MenuItem key={option.id} value={option.id}>
               {option.label}
             </MenuItem>
@@ -40,4 +42,4 @@ function SelectSort() {
   );
 }
 
-export default SelectSort;
+export default SelectOrdersStatus;

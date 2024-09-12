@@ -3,18 +3,20 @@ import { ThemeProvider } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
-import Navigator from '../components/dashboard/Navigator';
-import MainHeader from '../components/dashboard/MainHeader';
+import MainHeader from '@/components/dashboard/MainHeader';
 import { theme } from './theme';
-import ProjectInfo from '../components/ProjectInfo';
+import ProjectInfo from '@/components/dashboard/ProjectInfo';
 import { Outlet } from 'react-router-dom';
-import TabHeader from '../components/dashboard/TabHeader';
+import TabNameHeader from '@/components/dashboard/TabNameHeader';
+import Navigator from '@/components/dashboard/Navigator';
 
 const drawerWidth = 256;
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const isSmUp = useMediaQuery(theme.breakpoints.up('sm')); // для адаптации под мобильные устройства
+
+  // для адаптации под мобильные устройства
+  const isSmUp = useMediaQuery(theme.breakpoints.up('sm'));
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -43,7 +45,7 @@ export default function App() {
         </Box>
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
           <MainHeader onDrawerToggle={handleDrawerToggle} />
-          <TabHeader />
+          <TabNameHeader />
           <Box
             component="main"
             sx={{ flex: 1, py: 6, px: 4, bgcolor: '#eaeff1' }}

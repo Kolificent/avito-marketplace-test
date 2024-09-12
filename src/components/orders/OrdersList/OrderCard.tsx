@@ -8,13 +8,13 @@ import {
 } from '@mui/material';
 import { useState } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Order } from '@types';
+import type { Order } from '@types';
 import { formatDate } from '@utils';
 import { getStatusLabelById } from '@utils';
-import AdvertisementCard from '../../AdvertisementsPage/AdvertisementsGrid/AdvertisementCard/AdvertisementCard';
 import OrdersAPI from '@api/ordersApi';
 import { useAppDispatch } from '@store';
 import { updateOrders } from '@slices/orders';
+import AdvertisementCard from '@/components/advertisements/AdvertisementsGrid/AdvertisementCard';
 
 interface OrderCardProps {
   id: Order['id'];

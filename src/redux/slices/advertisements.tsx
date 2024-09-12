@@ -1,11 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../store';
+import { RootState } from '@store';
 import {
   DEFAULT_PAGINATION,
   DEFAULT_ADVERTISEMENTS,
-} from '../../constants/slicesDefaults';
-import AdvertisementsAPI from '../../api/advertisementsApi';
-import { getAdsSortById } from '../../utils/getSortById';
+} from '@constants/slicesDefaults';
+import AdvertisementsAPI from '@api/advertisementsApi';
+import { getAdsSortById } from '@utils/getSortById';
 
 export const updateAdvertisements = createAsyncThunk(
   'advertisements/updateAdvertisements',

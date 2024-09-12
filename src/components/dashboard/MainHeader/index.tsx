@@ -48,15 +48,15 @@ export default function MainHeader(props: HeaderProps) {
               </Link>
             </Grid>
             <Grid item>
-              <Tooltip title="Alerts • No alerts">
+              <Tooltip title="Нет уведомлений">
                 <IconButton color="inherit">
                   <NotificationsIcon />
                 </IconButton>
               </Tooltip>
             </Grid>
             <Grid item>
-              <IconButton color="inherit" sx={{ p: 0.5 }}>
-                <Avatar src="/static/images/avatar/1.jpg" alt="My Avatar" />
+              <IconButton disabled color="inherit" sx={{ p: 0.5 }}>
+                <Avatar />
               </IconButton>
             </Grid>
           </Grid>

@@ -1,8 +1,7 @@
-import { Button } from '@mui/material';
-import React from 'react';
-import { NavigateBefore } from '@mui/icons-material';
 import { MouseEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Button } from '@mui/material';
+import { NavigateBefore } from '@mui/icons-material';
 
 export default function NavigateBackButton() {
   const navigate = useNavigate();

@@ -10,7 +10,7 @@ import {
   changeAdsCurrentPage,
   changeAdsPageCount,
 } from '@slices/advertisements';
-import CustomPagination from '../ui/CustomPagination/CustomPagination';
+import CustomPagination from '@ui/CustomPagination';
 
 function AdsPagination() {
   const dispatch = useAppDispatch();

@@ -6,19 +6,19 @@ import {
   Select,
   SelectChangeEvent,
 } from '@mui/material';
-import { STATUS_FILTER_LABELS } from '@constants/statusFilterLabels';
+import { ORDER_SORT_OPTIONS } from '@constants/sortOptions';
 import { useAppDispatch, useAppSelector } from '@store';
-import { selectStatusFilter } from '@selectors/ordersSelector';
-import { changeStatusFilter } from '@slices/orders';
+import { selectOrdersSort } from '@selectors/ordersSelector';
+import { changeOrdersSort } from '@slices/orders';
 
-const SELECT_LABEL = 'Статус';
+const SELECT_LABEL = 'Сортировать по';
 
-function SelectStatus() {
+function SelectOrdersSort() {
   const dispatch = useAppDispatch();
-  const statusFilter = useAppSelector(selectStatusFilter);
+  const sort = useAppSelector(selectOrdersSort);
 
   const handleChange = (e: SelectChangeEvent) => {
-    dispatch(changeStatusFilter(e.target.value));
+    dispatch(changeOrdersSort(e.target.value));
   };
 
   return (
@@ -27,11 +27,10 @@ function SelectStatus() {
         <InputLabel>{SELECT_LABEL}</InputLabel>
         <Select
           label={SELECT_LABEL}
-          value={statusFilter.toString()}
+          value={sort.toString()}
           onChange={handleChange}
         >
-          <MenuItem value={7}>Не выбран</MenuItem>
-          {STATUS_FILTER_LABELS.slice(0, -1).map((option) => (
+          {ORDER_SORT_OPTIONS.map((option) => (
             <MenuItem key={option.id} value={option.id}>
               {option.label}
             </MenuItem>
@@ -42,4 +41,4 @@ function SelectStatus() {
   );
 }
 
-export default SelectStatus;
+export default SelectOrdersSort;
