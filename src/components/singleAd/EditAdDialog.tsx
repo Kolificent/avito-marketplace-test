@@ -1,3 +1,9 @@
+import { ChangeEvent, FormEvent, useState } from 'react';
+import AdvertisementsAPI from '@api/advertisementsApi';
+import type { Advertisment } from '@types';
+import { useAppDispatch, useAppSelector } from '@store';
+import { closeEditAdDialog } from '@slices/editAdDialog';
+import { selectEditAdDialog } from '@selectors/dialogSelectors';
 import {
   Button,
   Dialog,
@@ -7,12 +13,6 @@ import {
   DialogTitle,
   TextField,
 } from '@mui/material';
-import { useAppDispatch, useAppSelector } from '@store';
-import { selectEditAdDialog } from '@selectors/dialogSelectors';
-import { ChangeEvent, useState } from 'react';
-import { closeEditAdDialog } from '@slices/editAdDialog';
-import AdvertisementsAPI from '@api/advertisementsApi';
-import type { Advertisment } from '@types';
 
 interface EditAdDialogProps {
   advertisement: Advertisment;
@@ -39,10 +39,10 @@ export default function EditAdDialog({ advertisement }: EditAdDialogProps) {
     });
   }
 
-  function handleSubmit() {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
     AdvertisementsAPI.updateAdvertisement({ ...advertisement, ...adDetails });
     dispatch(closeEditAdDialog());
-    // не лучший подход
     window.location.reload();
   }
 
@@ -55,7 +55,14 @@ export default function EditAdDialog({ advertisement }: EditAdDialogProps) {
   }
 
   return (
-    <Dialog open={dialogStatus.isOpen} onClose={handleClose}>
+    <Dialog
+      open={dialogStatus.isOpen}
+      onClose={handleClose}
+      PaperProps={{
+        component: 'form',
+        onSubmit: handleSubmit,
+      }}
+    >
       <DialogTitle>Создание нового объявления</DialogTitle>
       <DialogContent>
         <DialogContentText>
@@ -63,6 +70,7 @@ export default function EditAdDialog({ advertisement }: EditAdDialogProps) {
         </DialogContentText>
         <TextField
           autoFocus
+          required
           margin="dense"
           label="Имя"
           type="text"
@@ -72,6 +80,7 @@ export default function EditAdDialog({ advertisement }: EditAdDialogProps) {
           onChange={handleChange}
         />
         <TextField
+          required
           margin="dense"
           label="Цена"
           type="number"
@@ -103,7 +112,7 @@ export default function EditAdDialog({ advertisement }: EditAdDialogProps) {
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose}>Отмена</Button>
-        <Button onClick={handleSubmit} autoFocus>
+        <Button type="submit" autoFocus>
           Ок
         </Button>
       </DialogActions>

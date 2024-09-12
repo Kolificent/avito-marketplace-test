@@ -1,6 +1,8 @@
-import Grid from '@mui/material/Grid2';
 import { useEffect } from 'react';
+import OrderCard from './OrderCard';
+import Grid from '@mui/material/Grid2';
 import { useAppDispatch, useAppSelector } from '@store';
+import { updateOrders } from '@slices/orders';
 import {
   selectOrders,
   selectOrdersCurrentPage,
@@ -10,8 +12,6 @@ import {
   selectOrdersSort,
   selectStatusFilter,
 } from '@selectors/ordersSelector';
-import { updateOrders } from '@slices/orders';
-import OrderCard from './OrderCard';
 import { Box, CircularProgress } from '@mui/material';
 
 export default function OrdersList() {

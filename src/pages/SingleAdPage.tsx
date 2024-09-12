@@ -1,15 +1,15 @@
-import { Box, Button, CircularProgress, Paper } from '@mui/material';
 import { Fragment, useEffect, useState } from 'react';
-import AdDetails from '@/components/singleAd/AdDetails';
 import { useParams } from 'react-router-dom';
 import AdvertisementsAPI from '@api/advertisementsApi';
 import type { Advertisment } from '@types';
-import EditIcon from '@mui/icons-material/Edit';
+import AdDetails from '@components/singleAd/AdDetails';
 import { useAppDispatch } from '@store';
 import { openEditAdDialog } from '@slices/editAdDialog';
-import EditAdDialog from '@/components/singleAd/EditAdDialog';
+import EditAdDialog from '@components/singleAd/EditAdDialog';
+import { Box, Button, CircularProgress, Paper } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
 
-export default function AdvertisementPage() {
+export default function SingleAdPage() {
   const adId = useParams<{ id: string }>().id as string;
   const [advertisement, setAdvertisement] = useState<Advertisment | null>(null);
   const dispatch = useAppDispatch();

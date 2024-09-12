@@ -1,5 +1,5 @@
-import type { DialogStatus } from '@types';
 import { RootState } from '@store';
+import type { DialogStatus } from '@types';
 
 const selectNewAdDialog = (state: RootState): DialogStatus =>
   state.newAdDialogReducer;

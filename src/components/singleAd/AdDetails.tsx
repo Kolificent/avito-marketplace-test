@@ -1,8 +1,8 @@
+import { useState } from 'react';
+import type { Advertisment } from '@types';
 import { Box, Button, Typography } from '@mui/material';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import type { Advertisment } from '@types';
-import { useState } from 'react';
 
 interface AdDetailsProps {
   title: Advertisment['name'];

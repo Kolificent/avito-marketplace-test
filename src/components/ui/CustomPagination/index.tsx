@@ -1,3 +1,5 @@
+import { ChangeEvent } from 'react';
+import type { ItemsPagination } from '@types';
 import {
   Box,
   FormControl,
@@ -7,8 +9,7 @@ import {
   Select,
   SelectChangeEvent,
 } from '@mui/material';
-import type { ItemsPagination } from '@types';
-import { ChangeEvent } from 'react';
+import { PAGE_COUNTS } from '@constants/pageCounts';
 
 interface CustomPaginationProps {
   currentPage: ItemsPagination['currentPage'];
@@ -27,22 +28,23 @@ function CustomPagination({
   onCurrentPageChange,
   onPageCountChange,
 }: CustomPaginationProps) {
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+
   function handleCurrentPageChange(
     event: React.ChangeEvent<unknown>,
     value: number,
   ) {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth', // Плавная прокрутка
-    });
+    scrollToTop();
     onCurrentPageChange(event, value);
   }
 
   function handlePageCountChange(event: SelectChangeEvent) {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth', // Плавная прокрутка
-    });
+    scrollToTop();
     onPageCountChange(event);
   }
 
@@ -64,9 +66,11 @@ function CustomPagination({
             label={PAGINATION_LABEL}
             onChange={handlePageCountChange}
           >
-            <MenuItem value={10}>10</MenuItem>
-            <MenuItem value={20}>20</MenuItem>
-            <MenuItem value={40}>40</MenuItem>
+            {PAGE_COUNTS.map((count) => (
+              <MenuItem key={count} value={count}>
+                {count}
+              </MenuItem>
+            ))}
           </Select>
         </FormControl>
       </Box>

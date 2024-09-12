@@ -415,6 +415,16 @@
       "views": 0,
       "likes": 0,
       "imageUrl": "https://sun9-46.userapi.com/impg/fLGS8p-Px4qRt589FZHzaG6GroxAw3vaxpJMAg/IWT7LyZjEHY.jpg?size=750x563&quality=95&sign=caba200e4048483313064ea664802200&type=album"
+    },
+    {
+      "id": "4902783b-9e9d-457c-a3c2-318a090c36dc",
+      "name": "Товар без изображения",
+      "description": "",
+      "price": 214,
+      "createdAt": "2024-09-12T14:25:04.955Z",
+      "views": 0,
+      "likes": 0,
+      "imageUrl": ""
     }
   ],
   "orders": [

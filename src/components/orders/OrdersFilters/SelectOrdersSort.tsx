@@ -1,3 +1,7 @@
+import { useAppDispatch, useAppSelector } from '@store';
+import { ORDER_SORT_OPTIONS } from '@constants/sortOptions';
+import { changeOrdersSort } from '@slices/orders';
+import { selectOrdersSort } from '@selectors/ordersSelector';
 import {
   Box,
   FormControl,
@@ -6,10 +10,6 @@ import {
   Select,
   SelectChangeEvent,
 } from '@mui/material';
-import { ORDER_SORT_OPTIONS } from '@constants/sortOptions';
-import { useAppDispatch, useAppSelector } from '@store';
-import { selectOrdersSort } from '@selectors/ordersSelector';
-import { changeOrdersSort } from '@slices/orders';
 
 const SELECT_LABEL = 'Сортировать по';
 

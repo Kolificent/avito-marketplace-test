@@ -4,19 +4,17 @@ import {
   CardContent,
   Typography,
   CardActionArea,
-  Box,
   CircularProgress,
 } from '@mui/material';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import { Link } from 'react-router-dom';
 import type { Advertisment } from '@types';
 import { useState } from 'react';
+import StatsCounters from './StatsCounters';
 
 interface AdvertisementCardProps {
   id: Advertisment['id'];
   name: Advertisment['name'];
-  image: Advertisment['imageUrl'];
+  imageUrl: Advertisment['imageUrl'];
   price: Advertisment['price'];
   views: Advertisment['views'];
   likes: Advertisment['likes'];
@@ -25,7 +23,7 @@ interface AdvertisementCardProps {
 export default function AdvertisementCard({
   id,
   name,
-  image,
+  imageUrl,
   price,
   views,
   likes,
@@ -35,6 +33,7 @@ export default function AdvertisementCard({
   const handleImageLoad = () => {
     setLoading(false);
   };
+
   return (
     <Card sx={{ width: 182 }}>
       <Link
@@ -42,46 +41,7 @@ export default function AdvertisementCard({
         style={{ textDecoration: 'none', color: 'inherit' }}
       >
         <CardActionArea>
-          <Box
-            sx={{
-              position: 'absolute',
-              top: 10,
-              left: 10,
-              backgroundColor: 'rgba(0, 0, 0, 0.5)',
-              color: 'white',
-              padding: '5px',
-              borderRadius: '4px',
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              gap: 0.5,
-            }}
-          >
-            <VisibilityIcon sx={{ fontSize: 10 }} />
-            <Typography variant="body2" fontSize={10}>
-              {views}
-            </Typography>
-          </Box>
-          <Box
-            sx={{
-              position: 'absolute',
-              top: 10,
-              right: 10,
-              backgroundColor: 'rgba(0, 0, 0, 0.5)',
-              color: 'white',
-              padding: '5px',
-              borderRadius: '4px',
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              gap: 0.5,
-            }}
-          >
-            <ThumbUpIcon sx={{ fontSize: 10 }} />
-            <Typography variant="body2" fontSize={10}>
-              {likes}
-            </Typography>
-          </Box>
+          <StatsCounters views={views} likes={likes} />
           {loading && (
             <CardMedia
               sx={{
@@ -91,13 +51,13 @@ export default function AdvertisementCard({
                 justifyContent: 'center',
               }}
             >
-              <CircularProgress />
+              {imageUrl ? <CircularProgress /> : 'Нет изображения'}
             </CardMedia>
           )}
           <CardMedia
             component="img"
             height="182"
-            image={image}
+            image={imageUrl}
             alt={name}
             style={{ display: loading ? 'none' : 'block' }}
             onLoad={handleImageLoad}
@@ -113,7 +73,7 @@ export default function AdvertisementCard({
                 display: '-webkit-box',
                 WebkitBoxOrient: 'vertical',
                 overflow: 'hidden',
-                WebkitLineClamp: 2, // Указываем количество строк
+                WebkitLineClamp: 2,
               }}
             >
               {name}

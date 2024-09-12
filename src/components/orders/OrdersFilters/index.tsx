@@ -1,6 +1,6 @@
-import { AppBar, Grid2, Toolbar } from '@mui/material';
 import SelectOrdersStatus from './SelectOrdersStatus';
 import SelectOrdersSort from './SelectOrdersSort';
+import { AppBar, Grid2, Toolbar } from '@mui/material';
 
 export default function OrdersFilters() {
   return (

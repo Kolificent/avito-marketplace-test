@@ -1,3 +1,7 @@
+import { STATUS_FILTER_LABELS } from '@constants/statusFilterLabels';
+import { useAppDispatch, useAppSelector } from '@store';
+import { selectStatusFilter } from '@selectors/ordersSelector';
+import { changeStatusFilter } from '@slices/orders';
 import {
   Box,
   FormControl,
@@ -6,10 +10,6 @@ import {
   Select,
   SelectChangeEvent,
 } from '@mui/material';
-import { STATUS_FILTER_LABELS } from '@constants/statusFilterLabels';
-import { useAppDispatch, useAppSelector } from '@store';
-import { selectStatusFilter } from '@selectors/ordersSelector';
-import { changeStatusFilter } from '@slices/orders';
 
 const SELECT_LABEL = 'Статус';
 

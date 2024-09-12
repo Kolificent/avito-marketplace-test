@@ -21,7 +21,6 @@ export default function AdvertisementsGrid() {
   const sort = useAppSelector(selectAdsSort);
   const pageCount = useAppSelector(selectAdsPageCount);
   const query = useAppSelector(selectQuery);
-
   const isLoading = useAppSelector(selectAdsLoading);
   const error = useAppSelector(selectAdsError);
 
@@ -46,6 +45,7 @@ export default function AdvertisementsGrid() {
       </Box>
     );
   }
+
   return (
     <Grid container spacing={2}>
       {advertisements.map((ad) => {
@@ -54,7 +54,7 @@ export default function AdvertisementsGrid() {
             <AdvertisementCard
               id={ad.id}
               name={ad.name}
-              image={ad.imageUrl}
+              imageUrl={ad.imageUrl}
               price={ad.price}
               views={ad.views}
               likes={ad.likes}

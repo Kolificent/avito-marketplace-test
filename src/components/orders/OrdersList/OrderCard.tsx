@@ -1,3 +1,10 @@
+import { useState } from 'react';
+import OrdersAPI from '@api/ordersApi';
+import type { Order } from '@types';
+import { formatDate, getStatusLabelById } from '@utils';
+import { useAppDispatch } from '@store';
+import { updateOrders } from '@slices/orders';
+import AdvertisementCard from '@components/advertisements/AdvertisementsGrid/AdvertisementCard';
 import {
   Box,
   Button,
@@ -6,15 +13,7 @@ import {
   Paper,
   Typography,
 } from '@mui/material';
-import { useState } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
-import type { Order } from '@types';
-import { formatDate } from '@utils';
-import { getStatusLabelById } from '@utils';
-import OrdersAPI from '@api/ordersApi';
-import { useAppDispatch } from '@store';
-import { updateOrders } from '@slices/orders';
-import AdvertisementCard from '@/components/advertisements/AdvertisementsGrid/AdvertisementCard';
 
 interface OrderCardProps {
   id: Order['id'];
@@ -73,7 +72,7 @@ export default function OrderCard(order: OrderCardProps) {
                     <AdvertisementCard
                       id={ad.id}
                       name={ad.name}
-                      image={ad.imageUrl}
+                      imageUrl={ad.imageUrl}
                       price={ad.price}
                       views={ad.views}
                       likes={ad.likes}

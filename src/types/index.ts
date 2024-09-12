@@ -1,4 +1,6 @@
-// По условию в названии грамматическая ошибка, но менять контракты нельзя...
+import { ReactNode } from 'react';
+
+// В названии грамматическая ошибка, но по условию менять контракты нельзя...
 type Advertisment = {
   /* Уникальный идентификатор. */
   id: string;
@@ -61,6 +63,24 @@ export { OrderStatus };
 
 // Далее идут контракты, что не были даны по условию
 
+interface Category {
+  id: number;
+  name: string;
+  children: Array<number>;
+}
+
+interface StatusLabel {
+  id: number;
+  label: string;
+}
+
+interface Tab {
+  id: number;
+  name: string;
+  icon: ReactNode;
+  route: string;
+}
+
 interface SortOptions {
   id: number;
   name: string;
@@ -96,7 +116,10 @@ interface DialogStatus {
 }
 
 export type {
+  Category,
+  Tab,
   ItemsPagination,
+  StatusLabel,
   AdvertisementsInfo,
   OrdersInfo,
   DialogStatus,

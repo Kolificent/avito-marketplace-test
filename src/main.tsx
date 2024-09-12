@@ -4,18 +4,20 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import './reset.css';
 import App from './app/App.tsx';
-import store from './redux/store/index.tsx';
-import { createRoot } from 'react-dom/client';
 import {
   createBrowserRouter,
   Navigate,
   RouterProvider,
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import AdvertisementsPage from './pages/AdvertisementsPage.tsx';
-import OrdersPage from './pages/OrdersPage.tsx';
-import AdvertisementPage from './pages/SingleAdPage.tsx';
-import ErrorPage from './pages/ErrorPage.tsx';
+import { createRoot } from 'react-dom/client';
+import store from '@store';
+import {
+  AdvertisementsPage,
+  OrdersPage,
+  SingleAdPage,
+  ErrorPage,
+} from '@pages';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +29,7 @@ const router = createBrowserRouter([
         element: <Navigate to="/advertisements" replace />,
       },
       { path: 'advertisements', element: <AdvertisementsPage /> },
-      { path: 'advertisement/:id', element: <AdvertisementPage /> },
+      { path: 'advertisement/:id', element: <SingleAdPage /> },
       { path: 'orders', element: <OrdersPage /> },
     ],
     errorElement: <ErrorPage />,

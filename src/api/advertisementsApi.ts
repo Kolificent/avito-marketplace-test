@@ -31,6 +31,7 @@ const AdvertisementsAPI = {
         `Error fetching advertisement with id ${advertisementId}`,
         error,
       );
+      return null;
     }
   },
 
@@ -49,7 +50,7 @@ const AdvertisementsAPI = {
           name: name,
           description: description || '',
           price: price,
-          createdAt: date.toDateString(),
+          createdAt: date,
           views: 0,
           likes: 0,
           imageUrl: imageUrl || '',

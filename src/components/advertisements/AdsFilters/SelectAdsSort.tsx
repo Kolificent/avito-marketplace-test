@@ -1,3 +1,7 @@
+import { ADVERTISEMENT_SORT_OPTIONS } from '@constants/sortOptions';
+import { useAppDispatch, useAppSelector } from '@store';
+import { selectAdsSort } from '@selectors/advertisementsSelector';
+import { changeAdsSort } from '@slices/advertisements';
 import {
   Box,
   FormControl,
@@ -6,12 +10,9 @@ import {
   Select,
   SelectChangeEvent,
 } from '@mui/material';
-import { ADVERTISEMENT_SORT_OPTIONS } from '@constants/sortOptions';
-import { useAppDispatch, useAppSelector } from '@store';
-import { selectAdsSort } from '@selectors/advertisementsSelector';
-import { changeAdsSort } from '@slices/advertisements';
 
 const SELECT_LABEL = 'Сортировать по';
+
 function SelectAdsSort() {
   const dispatch = useAppDispatch();
   const sort = useAppSelector(selectAdsSort);

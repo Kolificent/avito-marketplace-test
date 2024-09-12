@@ -1,25 +1,23 @@
 import { useState } from 'react';
-import { ThemeProvider } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import CssBaseline from '@mui/material/CssBaseline';
-import Box from '@mui/material/Box';
-import MainHeader from '@/components/dashboard/MainHeader';
-import { theme } from './theme';
-import ProjectInfo from '@/components/dashboard/ProjectInfo';
 import { Outlet } from 'react-router-dom';
-import TabNameHeader from '@/components/dashboard/TabNameHeader';
-import Navigator from '@/components/dashboard/Navigator';
+import { theme } from './theme';
+import {
+  MainHeader,
+  ProjectInfo,
+  TabNameHeader,
+  Navigator,
+} from '@components/dashboard';
+import { ThemeProvider, CssBaseline, useMediaQuery, Box } from '@mui/material';
 
 const drawerWidth = 256;
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
-
   // для адаптации под мобильные устройства
   const isSmUp = useMediaQuery(theme.breakpoints.up('sm'));
 
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
+    setMobileOpen((prev) => !prev);
   };
 
   return (

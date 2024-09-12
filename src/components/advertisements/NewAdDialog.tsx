@@ -1,3 +1,9 @@
+import { ChangeEvent, FormEvent, useState } from 'react';
+import { useAppDispatch, useAppSelector } from '@store';
+import { updateAdvertisements } from '@slices/advertisements';
+import { closeNewAdDialog } from '@slices/newAdDialog';
+import { selectNewAdDialog } from '@selectors/dialogSelectors';
+import AdvertisementsAPI from '@api/advertisementsApi';
 import {
   Button,
   Dialog,
@@ -7,49 +13,43 @@ import {
   DialogTitle,
   TextField,
 } from '@mui/material';
-import { useAppDispatch, useAppSelector } from '@store';
-import { selectNewAdDialog } from '@selectors/dialogSelectors';
-import { closeNewAdDialog } from '@slices/newAdDialog';
-import AdvertisementsAPI from '@api/advertisementsApi';
-import { ChangeEvent, useState } from 'react';
-import { updateAdvertisements } from '@slices/advertisements';
+
+const DEFAULT_DIALOG_INPUTS = {
+  name: '',
+  price: '',
+  description: '',
+  imageUrl: '',
+};
 
 export default function NewAdDialog() {
   const dispatch = useAppDispatch();
   const dialogStatus = useAppSelector(selectNewAdDialog);
 
-  const [adDetails, setAdDetails] = useState({
-    name: '',
-    price: 0,
-    description: '',
-    imageUrl: '',
-  });
+  const [adDetails, setAdDetails] = useState(DEFAULT_DIALOG_INPUTS);
 
   function handleClose() {
     dispatch(closeNewAdDialog());
-    setAdDetails({
-      name: '',
-      price: 0,
-      description: '',
-      imageUrl: '',
-    });
+    setAdDetails(DEFAULT_DIALOG_INPUTS);
   }
 
-  function handleSubmit() {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
     const { name: title, price, description, imageUrl } = adDetails;
-    AdvertisementsAPI.createAdvertisement(title, price, imageUrl, description);
+    const fixedPrice = parseInt(price.toString(), 10);
+    AdvertisementsAPI.createAdvertisement(
+      title,
+      fixedPrice,
+      imageUrl,
+      description,
+    );
     dispatch(closeNewAdDialog());
     dispatch(updateAdvertisements());
-    setAdDetails({
-      name: '',
-      price: 0,
-      description: '',
-      imageUrl: '',
-    });
+    setAdDetails(DEFAULT_DIALOG_INPUTS);
   }
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
+
     setAdDetails((prevDetails) => ({
       ...prevDetails,
       [name]: value,
@@ -57,13 +57,21 @@ export default function NewAdDialog() {
   }
 
   return (
-    <Dialog open={dialogStatus.isOpen} onClose={handleClose}>
+    <Dialog
+      open={dialogStatus.isOpen}
+      onClose={handleClose}
+      PaperProps={{
+        component: 'form',
+        onSubmit: handleSubmit,
+      }}
+    >
       <DialogTitle>Создание нового объявления</DialogTitle>
       <DialogContent>
         <DialogContentText>
           Пожалуйста, заполните следующие поля
         </DialogContentText>
         <TextField
+          required
           autoFocus
           margin="dense"
           label="Имя"
@@ -74,6 +82,7 @@ export default function NewAdDialog() {
           onChange={handleChange}
         />
         <TextField
+          required
           margin="dense"
           label="Цена"
           type="number"
@@ -105,7 +114,7 @@ export default function NewAdDialog() {
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose}>Отмена</Button>
-        <Button onClick={handleSubmit} autoFocus>
+        <Button type="submit" autoFocus>
           Ок
         </Button>
       </DialogActions>

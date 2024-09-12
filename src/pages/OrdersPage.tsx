@@ -1,8 +1,9 @@
-import Paper from '@mui/material/Paper';
-import OrdersFilters from '@/components/orders/OrdersFilters';
-import OrdersList from '@/components/orders/OrdersList';
-import OrdersPagination from '@/components/orders/OrdersPagination';
-import { Box } from '@mui/material';
+import {
+  OrdersFilters,
+  OrdersList,
+  OrdersPagination,
+} from '@components/orders';
+import { Box, Paper } from '@mui/material';
 
 export default function OrdersPage() {
   return (

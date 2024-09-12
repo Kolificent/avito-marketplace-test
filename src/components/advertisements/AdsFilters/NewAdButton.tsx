@@ -1,11 +1,10 @@
-import { Fab } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
 import { useAppDispatch } from '@store';
 import { openNewAdDialog } from '@slices/newAdDialog';
+import { Fab } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
 
 export default function NewAdButton() {
   const dispatch = useAppDispatch();
-  // const dialogStatus = useAppSelector(selectNewAdDialog);
 
   function handleClick() {
     dispatch(openNewAdDialog());

@@ -1,6 +1,6 @@
-import { AppBar, Toolbar, Typography } from '@mui/material';
 import { useLocation } from 'react-router-dom';
-import { TABS } from '@constants/navigation';
+import { TABS } from '@constants/navigationConsts';
+import { AppBar, Toolbar, Typography } from '@mui/material';
 
 export default function TabNameHeader() {
   const location = useLocation();

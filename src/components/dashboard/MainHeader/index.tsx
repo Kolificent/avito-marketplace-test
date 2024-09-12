@@ -1,19 +1,21 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Avatar from '@mui/material/Avatar';
-import Grid from '@mui/material/Grid';
-import IconButton from '@mui/material/IconButton';
-import Link from '@mui/material/Link';
-import MenuIcon from '@mui/icons-material/Menu';
+import {
+  AppBar,
+  Avatar,
+  Grid,
+  IconButton,
+  Toolbar,
+  Tooltip,
+} from '@mui/material';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import Toolbar from '@mui/material/Toolbar';
-import Tooltip from '@mui/material/Tooltip';
+import MenuIcon from '@mui/icons-material/Menu';
+import HomeButton from './HomeButton';
 
-interface HeaderProps {
+interface MainHeaderProps {
   onDrawerToggle: () => void;
 }
 
-export default function MainHeader(props: HeaderProps) {
+export default function MainHeader(props: MainHeaderProps) {
   const { onDrawerToggle } = props;
 
   return (
@@ -22,30 +24,13 @@ export default function MainHeader(props: HeaderProps) {
         <Toolbar>
           <Grid container spacing={1} sx={{ alignItems: 'center' }}>
             <Grid sx={{ display: { sm: 'none', xs: 'block' } }} item>
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                onClick={onDrawerToggle}
-                edge="start"
-              >
+              <IconButton color="inherit" onClick={onDrawerToggle} edge="start">
                 <MenuIcon />
               </IconButton>
             </Grid>
             <Grid item xs />
             <Grid item>
-              <Link
-                href="https://www.avito.ru/"
-                variant="body2"
-                sx={{
-                  textDecoration: 'none',
-                  color: 'rgba(255, 255, 255, 0.7)',
-                  '&:hover': {
-                    color: 'common.white',
-                  },
-                }}
-              >
-                На главную
-              </Link>
+              <HomeButton />
             </Grid>
             <Grid item>
               <Tooltip title="Нет уведомлений">
