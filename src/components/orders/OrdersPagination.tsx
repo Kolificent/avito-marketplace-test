@@ -6,7 +6,7 @@ import {
   selectOrdersMaxPage,
   selectOrdersPageCount,
 } from '@selectors/orders';
-import CustomPagination from '@ui/CustomPagination';
+import CustomPagination from '@components/ui/CustomPagination';
 import { SelectChangeEvent } from '@mui/material';
 
 function OrdersPagination() {

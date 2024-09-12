@@ -18,8 +18,8 @@ export default function ErrorPage() {
           Такой страницы не существует!
         </Typography>
         <NavigateBackButton />
-        <Typography variant="caption">
-          куда-то совсем не туда забрели...
+        <Typography variant="h5">
+          <i>Оставь надежду, всяк код смотрящий...</i>
         </Typography>
       </Box>
     </Box>

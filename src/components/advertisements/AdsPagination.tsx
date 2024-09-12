@@ -9,7 +9,7 @@ import {
   selectAdsMaxPage,
   selectAdsPageCount,
 } from '@selectors/advertisements';
-import CustomPagination from '@ui/CustomPagination';
+import CustomPagination from '@components/ui/CustomPagination';
 import { SelectChangeEvent } from '@mui/material';
 
 function AdsPagination() {

@@ -2,14 +2,8 @@ import { ADVERTISEMENT_SORT_OPTIONS } from '@constants/sortOptions';
 import { useAppDispatch, useAppSelector } from '@store';
 import { selectAdsSort } from '@selectors/advertisements';
 import { changeAdsSort } from '@slices/advertisements';
-import {
-  Box,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-} from '@mui/material';
+import { SelectChangeEvent } from '@mui/material';
+import CustomSelect from '@components/ui/CustomSelect';
 
 const SELECT_LABEL = 'Сортировать по';
 
@@ -22,22 +16,12 @@ function SelectAdsSort() {
   };
 
   return (
-    <Box display="flex" alignItems="center" gap={1} minWidth={200}>
-      <FormControl fullWidth size="small">
-        <InputLabel>{SELECT_LABEL}</InputLabel>
-        <Select
-          label={SELECT_LABEL}
-          value={sort.toString()}
-          onChange={handleChange}
-        >
-          {ADVERTISEMENT_SORT_OPTIONS.map((option) => (
-            <MenuItem key={option.id} value={option.id}>
-              {option.label}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-    </Box>
+    <CustomSelect
+      value={sort.toString()}
+      onChange={handleChange}
+      selectLabel={SELECT_LABEL}
+      items={ADVERTISEMENT_SORT_OPTIONS}
+    />
   );
 }
 
