@@ -1,6 +1,6 @@
 import { STATUS_FILTER_LABELS } from '@constants/statusFilterLabels';
 import { useAppDispatch, useAppSelector } from '@store';
-import { selectStatusFilter } from '@selectors/ordersSelector';
+import { selectStatusFilter } from '@selectors/orders';
 import { changeStatusFilter } from '@slices/orders';
 import {
   Box,
@@ -31,9 +31,9 @@ function SelectOrdersStatus() {
           onChange={handleChange}
         >
           <MenuItem value={7}>Не выбран</MenuItem>
-          {STATUS_FILTER_LABELS.slice(0, -1).map((option) => (
-            <MenuItem key={option.id} value={option.id}>
-              {option.label}
+          {STATUS_FILTER_LABELS.slice(0, -1).map(({ id, label }) => (
+            <MenuItem key={id} value={id}>
+              {label}
             </MenuItem>
           ))}
         </Select>

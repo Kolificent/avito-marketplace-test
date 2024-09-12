@@ -49,6 +49,7 @@ export default tseslint.config(
       'no-const-assign': 'warn',
       'no-self-assign': 'warn',
       'no-self-compare': 'warn',
+      'no-magic-numbers': 'warn',
       'no-unused-vars': 'warn',
       'valid-typeof': 'warn',
       'prefer-const': 'warn',

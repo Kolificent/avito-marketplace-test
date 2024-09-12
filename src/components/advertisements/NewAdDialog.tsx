@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '@store';
 import { updateAdvertisements } from '@slices/advertisements';
 import { closeNewAdDialog } from '@slices/newAdDialog';
-import { selectNewAdDialog } from '@selectors/dialogSelectors';
+import { selectNewAdDialog } from '@selectors/dialogs';
 import AdvertisementsAPI from '@api/advertisementsApi';
 import {
   Button,

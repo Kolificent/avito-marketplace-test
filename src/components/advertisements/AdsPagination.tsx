@@ -8,7 +8,7 @@ import {
   selectAdsCurrentPage,
   selectAdsMaxPage,
   selectAdsPageCount,
-} from '@selectors/advertisementsSelector';
+} from '@selectors/advertisements';
 import CustomPagination from '@ui/CustomPagination';
 import { SelectChangeEvent } from '@mui/material';
 

@@ -3,7 +3,7 @@ import AdvertisementsAPI from '@api/advertisementsApi';
 import type { Advertisment } from '@types';
 import { useAppDispatch, useAppSelector } from '@store';
 import { closeEditAdDialog } from '@slices/editAdDialog';
-import { selectEditAdDialog } from '@selectors/dialogSelectors';
+import { selectEditAdDialog } from '@selectors/dialogs';
 import {
   Button,
   Dialog,

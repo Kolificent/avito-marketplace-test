@@ -1,6 +1,6 @@
 import { ADVERTISEMENT_SORT_OPTIONS } from '@constants/sortOptions';
 import { useAppDispatch, useAppSelector } from '@store';
-import { selectAdsSort } from '@selectors/advertisementsSelector';
+import { selectAdsSort } from '@selectors/advertisements';
 import { changeAdsSort } from '@slices/advertisements';
 import {
   Box,

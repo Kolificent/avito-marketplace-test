@@ -5,7 +5,7 @@ import {
   selectOrdersCurrentPage,
   selectOrdersMaxPage,
   selectOrdersPageCount,
-} from '@selectors/ordersSelector';
+} from '@selectors/orders';
 import CustomPagination from '@ui/CustomPagination';
 import { SelectChangeEvent } from '@mui/material';
 

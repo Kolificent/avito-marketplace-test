@@ -11,7 +11,7 @@ import {
   selectOrdersPageCount,
   selectOrdersSort,
   selectStatusFilter,
-} from '@selectors/ordersSelector';
+} from '@selectors/orders';
 import { Box, CircularProgress } from '@mui/material';
 
 export default function OrdersList() {

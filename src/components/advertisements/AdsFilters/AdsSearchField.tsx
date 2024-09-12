@@ -2,7 +2,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { useDebouncedCallback } from 'use-debounce';
 import { useAppDispatch, useAppSelector } from '@store';
 import { changeAdsQuery } from '@slices/advertisements';
-import { selectQuery } from '@selectors/advertisementsSelector';
+import { selectQuery } from '@selectors/advertisements';
 import { TextField } from '@mui/material';
 
 export default function AdsSearchField() {

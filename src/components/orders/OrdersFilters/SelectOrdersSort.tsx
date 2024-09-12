@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from '@store';
 import { ORDER_SORT_OPTIONS } from '@constants/sortOptions';
 import { changeOrdersSort } from '@slices/orders';
-import { selectOrdersSort } from '@selectors/ordersSelector';
+import { selectOrdersSort } from '@selectors/orders';
 import {
   Box,
   FormControl,

@@ -27,12 +27,17 @@ export default function TabItem({ id }: TabItemProps) {
   if (!tab) return;
 
   const isButtonSelected = location.pathname === `/${tab.route}`;
+
+  // для отключения вкладок, что нет в ТЗ
+  const isButtonDisabled =
+    tab.route !== 'advertisements' && tab.route !== 'orders';
+
   return (
     <ListItem disablePadding key={id}>
       <ListItemButton
         selected={isButtonSelected}
         sx={itemStyle}
-        disabled={id > 2}
+        disabled={isButtonDisabled}
         onClick={() => {
           navigate(tab.route);
         }}

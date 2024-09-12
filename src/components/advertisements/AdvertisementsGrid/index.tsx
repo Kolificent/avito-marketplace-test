@@ -10,7 +10,7 @@ import {
   selectQuery,
   selectAdsLoading,
   selectAdsError,
-} from '@selectors/advertisementsSelector';
+} from '@selectors/advertisements';
 import { updateAdvertisements } from '@slices/advertisements';
 import { Box, CircularProgress } from '@mui/material';
 
