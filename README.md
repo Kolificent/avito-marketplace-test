@@ -1,4 +1,4 @@
-![picture](https://i.imgur.com/LprmV7R.jpeg)
+![picture](https://i.imgur.com/aifNk5L.jpeg)
 
 # Тестовое задание для avito.tech Frontend 2024
 

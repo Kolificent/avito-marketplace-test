@@ -14,7 +14,7 @@ export default function ProjectInfo() {
         color="inherit"
         href="https://github.com/Kolificent/avito-marketplace-test"
       >
-        {'GitVerse ДОБАВИТЬ'}
+        {'GitVerse'}
       </Link>
     </Typography>
   );
