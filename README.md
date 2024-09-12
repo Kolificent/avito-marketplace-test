@@ -1,3 +1,5 @@
+![picture](https://i.imgur.com/LprmV7R.jpeg)
+
 # Тестовое задание для Avito.tech Frontend 2024
 
 ## Суть задания
@@ -18,7 +20,7 @@ React, TypeScript, React Router, Redux (RTK), axios, Material UI, Vite
 
 ## Функционал
 
-#### На странице всех объявлений:
+### На странице всех объявлений:
 
 1. Отображается список всех объявлений продавца
 2. Реализована пагинация показа объявлений
@@ -45,7 +47,7 @@ React, TypeScript, React Router, Redux (RTK), axios, Material UI, Vite
 - просмотрам;
 - лайкам
 
-#### На странице объявления:
+### На странице объявления:
 
 1. Есть возможность просмотра объявления
 2. В редактировании объявления есть возможность:
@@ -54,7 +56,7 @@ React, TypeScript, React Router, Redux (RTK), axios, Material UI, Vite
    - Менять цену;
    - Менять описание.
 
-#### На странице заказов:
+### На странице заказов:
 
 1. Отображается список заказов с фильтрами по статусу
 2. Возможно сделать сортировку по сумме заказа
@@ -71,7 +73,7 @@ React, TypeScript, React Router, Redux (RTK), axios, Material UI, Vite
 **Дополнительное задание**
 На странице заказов реализована пагинация показа заказов
 
-#### Панель навигации:
+### Панель навигации:
 
 1. Вкладка “Объявления” - реализован переход на страницу объявлений
 2. Вкладка “Заказы” - реализован переход на страницу заказов
@@ -87,4 +89,5 @@ React, TypeScript, React Router, Redux (RTK), axios, Material UI, Vite
 ## Ссылки на репозиторий
 
 [Github](https://github.com/Kolificent/avito-marketplace-test)
+
 [Gitverse](https://github.com/Kolificent/avito-marketplace-test)
